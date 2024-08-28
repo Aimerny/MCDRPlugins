@@ -29,16 +29,16 @@ class CommandManager:
     def help_process(cls, source: CommandSource, what: Optional[str]):
         reply_message(source, tr('help.help_header'))
         if what is None:
-            reply_message(source, tr('help.start_help', RText(f'!!mam start <server_name>', RColor.gray)))
-            reply_message(source, tr('help.stop_help', RText(f'!!mam stop <server_name>', RColor.gray)))
-            reply_message(source, tr('help.sync_help', RText(f'!!mam sync <server_name> <id>', RColor.gray)))
+            reply_message(source, tr('help.start_help', RText(f'!!mam start [server_name]', RColor.gray)))
+            reply_message(source, tr('help.stop_help', RText(f'!!mam stop [server_name]', RColor.gray)))
+            reply_message(source, tr('help.sync_help', RText(f'!!mam sync <backup_id> [server_name]', RColor.gray)))
             # reply_message(source, tr('help.info_help', RText(f'!!mam info <server_name>', RColor.gray)))
         elif what == 'start':
-            reply_message(source, tr('help.start_help', RText(f'!!mam start <server_name>', RColor.gray)))
+            reply_message(source, tr('help.start_help', RText(f'!!mam start [server_name]', RColor.gray)))
         elif what == 'stop':
-            reply_message(source, tr('help.stop_help', RText(f'!!mam stop <server_name>', RColor.gray)))
+            reply_message(source, tr('help.stop_help', RText(f'!!mam stop [server_name]', RColor.gray)))
         elif what == 'sync':
-            reply_message(source, tr('help.sync_help', RText(f'!!mam sync <server_name> <backup_id>', RColor.gray)))
+            reply_message(source, tr('help.sync_help', RText(f'!!mam sync <backup_id> [server_name]', RColor.gray)))
         # elif what == 'info':
         #     reply_message(source, tr('help.info_help', RText(f'!!mam info <server_name>', RColor.gray)))
         reply_message(source, tr('help.help_footer'))
