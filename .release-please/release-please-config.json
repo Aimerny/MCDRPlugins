@@ -1,0 +1,28 @@
+{
+  "pull-request-title-pattern": "chore${scope}: 🔖 release${component} ${version}",
+  "extra-files": [
+    {
+      "type": "json",
+      "path": "mcdreforged.plugin.json",
+      "jsonpath": "$.version"
+    }
+  ],
+  "separate-pull-requests": true,
+  "packages": {
+    "src/kook_api": {
+      "package-name": "kook_api"
+    },
+    "src/kookin": {
+      "package-name": "kookin"
+    },
+    "src/mirror_archive_manager":{
+      "package-name": "mirror_archive_manager"
+    },
+    "src/offline_whitelist_reforged": {
+      "package-name": "offline_whitelist_reforged"
+    },
+    "src/player_last_play": {
+      "package-name": "player_last_play"
+    }
+  }
+}

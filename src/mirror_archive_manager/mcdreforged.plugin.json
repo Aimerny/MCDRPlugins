@@ -1,0 +1,22 @@
+{
+  "id": "mirror_archive_manager",
+  "version": "0.0.2",
+  "name": "MirrorArchiveManager",
+  "description": {
+    "en_us": "A plugin for mirror server archive management based on prime_backup. Supports managing multiple mirror server archives",
+    "zh_cn": "基于prime_backup的镜像服存档管理插件.支持管理多个镜像服存档"
+  },
+  "author": [
+    "Aimerny"
+  ],
+  "link": "https://github.com/Aimerny/MirrorArchiveManager",
+  "dependencies": {
+    "mcdreforged": ">=2.12.0",
+    "prime_backup": ">=1.7.4"
+  },
+  "entrypoint": "mirror_archive_manager.entrance",
+  "resources": [
+    "lang",
+    "LICENSE"
+  ]
+}

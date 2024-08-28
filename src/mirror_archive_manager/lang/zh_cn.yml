@@ -1,0 +1,22 @@
+mirror_archive_manager:
+  help:
+    unknown_help: '无指令帮助 --> {}'
+    start_help: '{} -- 启动镜像服 <server_name>'
+    stop_help: '{} -- 停止镜像服 <server_name>'
+    sync_help: '{} -- 将 prime_backup 中的编号[<id>]的存档同步到<server_name>'
+    # info_help: '{} -- 获取镜像服<server_name>的简单信息'
+    help_header: '========== Mirror Archive Manager =========='
+    help_footer: '================ by Aimerny ================'
+  start:
+    start_failed: '启动服务器[{}]失败'
+    start_success: '启动服务器[{}]成功'
+  stop:
+    stop_failed: '停止服务器[{}]失败'
+    stop_success: '停止服务器[{}]成功'
+  sync:
+    sync_failed: '同步存档[#{}]到镜像服[{}]失败'
+    sync_success: '同步存档[#{}]到镜像服[{}]成功'
+  no_mirror_found: '未找到已配置的镜像服务器'
+  no_backup_id_found: '请输入待同步的备份id'
+  connection_error: '连接服务器[{}]失败,请确认MCDR是否启动:{}'
+  perm_denied: '你没有权限执行该指令'

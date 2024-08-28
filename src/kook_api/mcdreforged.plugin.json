@@ -1,0 +1,11 @@
+{
+  "id": "kook_api",
+  "version": "0.1.4",
+  "name": "Kook API",
+  "description": {
+    "en_us": "A bridge of MC and Kook",
+    "zh_cn": "打通kook机器人与mc"
+  },
+  "author": "Aimerny",
+  "link": "https://github.com/Aimerny/KookAPI"
+}

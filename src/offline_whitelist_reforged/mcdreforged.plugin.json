@@ -1,0 +1,16 @@
+{
+  "id": "offline_whitelist_reforged",
+  "version": "1.1.1",
+  "name": "OfflineWhitelistReforged",
+  "description": {
+    "en_us": "A whitelist plugin in offline server",
+    "zh_cn": "离线服的白名单管理插件"
+  },
+  "author": [
+    "Aimerny"
+  ],
+  "link": "https://github.com/Aimerny/OfflineWhitelistReforged",
+  "dependencies": {
+    "mcdreforged": "^2.6.0"
+  }
+}

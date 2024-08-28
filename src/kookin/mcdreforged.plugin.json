@@ -1,0 +1,15 @@
+{
+  "id": "kookin",
+  "version": "0.1.6",
+  "name": "Kook In",
+  "description": {
+    "en_us": "A MCDR kook useful plugin",
+    "zh_cn": "一个使用KookAPI对接Kook机器人的MCDR插件"
+  },
+  "author": "Aimerny",
+  "link": "https://github.com/Aimerny/Kookin",
+  "dependencies": {
+    "kook_api": "^0.1.3",
+    "online_player_api": "^1.0.0"
+  }
+}

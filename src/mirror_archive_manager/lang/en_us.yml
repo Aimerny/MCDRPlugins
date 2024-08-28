@@ -1,0 +1,22 @@
+mirror_archive_manager:
+  help:
+    unknown_help: 'No help message for command --> {}'
+    start_help: '{} -- start mirror server <server_name>'
+    stop_help: '{} -- stop mirror server <server_name>'
+    sync_help: '{} -- sync prime backup archive [<id>] to mirror <server_name>'
+    # info_help: '{} -- get mirror server <server_name> simple info'
+    help_header: '========== Mirror Archive Manager =========='
+    help_footer: '================ by Aimerny ================'
+  start:
+    start_failed: 'start server [{}] failed'
+    start_success: 'start server [{}] success'
+  stop:
+    stop_failed: 'stop server [{}] failed'
+    stop_success: 'start server [{}] success'
+  sync:
+    sync_failed: 'sync backup id [{}] to mirror server [{}] failed'
+    sync_success: 'sync backup id [{}] to mirror server [{}] success'
+  no_mirror_found: 'not fount mirror server config'
+  no_backup_id_found: 'input archive prime backup id please'
+  connection_error: 'connect server [{}] failed. Check MCDR has been started please:{}'
+  perm_denied: 'permission denied'
