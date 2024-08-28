@@ -10,19 +10,19 @@
   "separate-pull-requests": true,
   "packages": {
     "src/kook_api": {
-      "package-name": "kook_api"
+      "package-name": "KookAPI"
     },
     "src/kookin": {
-      "package-name": "kookin"
+      "package-name": "KookIn"
     },
     "src/mirror_archive_manager":{
-      "package-name": "mirror_archive_manager"
+      "package-name": "MirrorArchiveManager"
     },
     "src/offline_whitelist_reforged": {
-      "package-name": "offline_whitelist_reforged"
+      "package-name": "OfflineWhitelistReforged"
     },
     "src/player_last_play": {
-      "package-name": "player_last_play"
+      "package-name": "PlayerLastPlay"
     }
   }
 }
