@@ -13,6 +13,7 @@ jobs:
     outputs:
       releases_created: ${{ steps.release-please.outputs.releases_created }}
       tag_name: ${{ steps.release-please.outputs.tag_name }}
+      path: ${{ steps.get-path.outputs.path }}
 
     steps:
       - name: Release Please
@@ -22,6 +23,12 @@ jobs:
           config-file: .release-please/release-please-config.json
           manifest-file: .release-please/.release-please-manifest.json
           skip-github-release: false
+
+      - name: Get Path
+        id: get-path
+        if: ${{ steps.release-please.outputs.releases_created == 'true' }}
+        run: |
+          echo "path=${{ fromJson(steps.release-please.outputs.paths_released)[0] }}" >> $GITHUB_OUTPUT
 
   build:
     runs-on: ubuntu-latest
