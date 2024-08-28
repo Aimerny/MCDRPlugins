@@ -13,6 +13,7 @@ jobs:
     outputs:
       releases_created: ${{ steps.release-please.outputs.releases_created }}
       tag_name: ${{ steps.release-please.outputs.tag_name }}
+      path: ${{ steps.get-path.outputs.path }}
 
     steps:
       - name: Release Please
