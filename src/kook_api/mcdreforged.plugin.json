@@ -1,6 +1,6 @@
 {
   "id": "kook_api",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "name": "Kook API",
   "description": {
     "en_us": "A bridge of MC and Kook",
