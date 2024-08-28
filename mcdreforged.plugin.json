@@ -1,0 +1,21 @@
+{
+  "id": "mcdr_plugin_template",
+  "version": "0.0.1",
+  "name": "MCDR-Plugin",
+  "description": {
+    "en_us": "English description",
+    "zh_cn": "中文描述"
+  },
+  "author": [
+    "Aimerny"
+  ],
+  "link": "https://github.com/Aimerny/MCDRPluginTemplate",
+  "dependencies": {
+    "mcdreforged": ">=2.12.0"
+  },
+  "entrypoint": "mcdr_plugin_template.entrance",
+  "resources": [
+    "lang",
+    "LICENSE"
+  ]
+}

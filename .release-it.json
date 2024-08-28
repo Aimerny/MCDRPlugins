@@ -1,0 +1,23 @@
+{
+  "github": {
+    "release": true
+  },
+  "git": {
+    "commitMessage": "chore: :package: v${version}"
+  },
+  "npm": {
+    "publish": false
+  },
+  "plugins": {
+    "@release-it/bumper": {
+      "out": {
+        "file": "mcdreforged.plugin.json",
+        "path": "version"
+      }
+    },
+    "@release-it/conventional-changelog": {
+      "preset": "angular",
+      "infile": "CHANGELOG.md"
+    }
+  }
+}
