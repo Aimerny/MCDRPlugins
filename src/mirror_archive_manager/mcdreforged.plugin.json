@@ -1,6 +1,6 @@
 {
   "id": "mirror_archive_manager",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "name": "MirrorArchiveManager",
   "description": {
     "en_us": "A plugin for mirror server archive management based on prime_backup. Supports managing multiple mirror server archives",
