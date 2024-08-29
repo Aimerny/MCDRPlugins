@@ -9,6 +9,9 @@
   ],
   "separate-pull-requests": true,
   "packages": {
+    "src/bili_live_helper": {
+      "package-name": "BiliLiveHelper"
+    },
     "src/kook_api": {
       "package-name": "KookAPI"
     },

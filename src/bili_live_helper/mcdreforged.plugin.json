@@ -1,0 +1,21 @@
+{
+  "id": "bili_live_helper",
+  "version": "0.0.0",
+  "name": "BiliLiveHelper",
+  "description": {
+    "en_us": "A bilibili live help plugin on MCDR",
+    "zh_cn": "一个基于MCDR的b站直播助手"
+  },
+  "author": [
+    "Aimerny"
+  ],
+  "link": "https://github.com/Aimerny/BiliLiveHelper",
+  "dependencies": {
+    "mcdreforged": ">=2.12.0"
+  },
+  "entrypoint": "bili_live_helper.entrance",
+  "resources": [
+    "lang",
+    "LICENSE"
+  ]
+}
