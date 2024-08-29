@@ -1,27 +1,29 @@
 from mcdreforged.api.all import *
 
+from bili_live_helper.mcdr.bili_manager import BiliManager
 from bili_live_helper.plugin_context import PluginContext
 
 
 class CommandManager:
-    def __init__(self, ctx: PluginContext):
+    def __init__(self, ctx: PluginContext, bili_manager: BiliManager):
         self.server = ctx.mcdr_server
         self.logger = self.server.logger
+        self.bili_manager = bili_manager
 
-    def cmd_help(self, context: CommandContext):
+    def cmd_help(self, source: CommandSource, context: CommandContext):
         pass
 
-    def cmd_bind_room(self, context: CommandContext):
+    def cmd_bind_room(self, source: CommandSource, context: CommandContext):
         pass
 
-    def cmd_enable(self, context: CommandContext):
+    def cmd_enable(self, source: CommandSource, context: CommandContext):
         pass
 
-    def cmd_live_info(self, context: CommandContext):
+    def cmd_live_info(self, source: CommandSource, context: CommandContext):
         pass
 
-    def cmd_player_live_info(self, contest: CommandContext):
-        pass
+    def cmd_player_live_info(self, source: CommandSource, context: CommandContext):
+        self.bili_manager.submit(context.get('player', 'Aimerny'), 'run')
 
     def register_command(self):
         builder = SimpleCommandBuilder()

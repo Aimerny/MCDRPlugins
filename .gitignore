@@ -165,3 +165,4 @@ node_modules/
 # ============= Plugin Dependency ==============
 prime_backup/
 test/
+local_sync.sh
