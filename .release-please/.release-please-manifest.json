@@ -3,6 +3,6 @@
   "src/kook_api": "0.1.4",
   "src/kookin": "0.1.6",
   "src/mirror_archive_manager": "0.1.0",
-  "src/offline_whitelist_reforged": "1.1.1",
+  "src/offline_whitelist_reforged": "1.2.0",
   "src/player_last_play": "1.1.3"
 }
