@@ -10,22 +10,22 @@
   "separate-pull-requests": true,
   "packages": {
     "src/bili_live_helper": {
-      "package-name": "BiliLiveHelper"
+      "package-name": "bili_live_helper"
     },
     "src/kook_api": {
-      "package-name": "KookAPI"
+      "package-name": "kook_api"
     },
     "src/kookin": {
-      "package-name": "KookIn"
+      "package-name": "kookin"
     },
     "src/mirror_archive_manager":{
-      "package-name": "MirrorArchiveManager"
+      "package-name": "mirror_archive_manager"
     },
     "src/offline_whitelist_reforged": {
-      "package-name": "OfflineWhitelistReforged"
+      "package-name": "offline_whitelist_reforged"
     },
     "src/player_last_play": {
-      "package-name": "PlayerLastPlay"
+      "package-name": "player_last_play"
     }
   }
 }
