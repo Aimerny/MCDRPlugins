@@ -32,7 +32,7 @@ class EventHandler:
         return receiver
 
     def handle_event(self, event: LiveEvent):
-        self.__logger.debug(event)
+        self.__logger.debug(f'received event: {event}')
         data = event.data
         if event.type != 'DANMU_MSG':
             self.__logger.warning('not support event type: {}', event.type)

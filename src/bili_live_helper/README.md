@@ -1,4 +1,4 @@
-# MCDR Plugin Template
+# BiliLiveHelper
 
 一个MCDR插件模板,可以从该项目快速开始MCDR插件!
 

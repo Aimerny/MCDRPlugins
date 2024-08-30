@@ -1,2 +1,26 @@
 bili_live_helper:
-  a: 'a'
+  raise_message:
+    console_command: "该指令只能通过控制台调用"
+    player_command: "该指令只能通过玩家调用"
+    live_conf_notfound: "未找到玩家{}的直播间配置信息"
+    listener_is_running: "弹幕姬[{}]已经在运行了"
+    listener_not_found: "[{}]的直播弹幕姬未启动"
+  reply_message:
+    run_listener: "已开启直播间[{}]的弹幕姬"
+    kill_listener: "[{}]已停止弹幕姬"
+  help:
+    header: "---------- BiliLiveHelper ----------"
+    help_desc: "获取帮助"
+    bind_desc: "绑定直播间id"
+    on_desc: "启动直播弹幕姬"
+    off_desc: "停止直播弹幕姬"
+    info_desc: "查看我的直播间信息"
+    footer: "------- Authored by Aimerny --------"
+  bind:
+    room_id_invalid: "绑定直播间失败,需要输入合法的房间号!"
+    update_room_id: "已更新直播间 [{}]=>[{}]"
+    create_room_id: "已绑定直播间 [{}]"
+  info:
+    header: "===== [{}]的直播间信息 ====="
+    room_id_template: "+ 直播间id: [{}]"
+    footer: "=========================="

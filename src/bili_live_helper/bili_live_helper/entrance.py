@@ -26,11 +26,20 @@ def on_load(server: PluginServerInterface, old):
     bili_manager = BiliManager(ctx=plg_ctx)
     if plg_ctx.mcdr_config.enable:
         bili_manager.start()
+    else:
+        server.logger.warning('bili live helper is disable, skip everything!')
+        return
+    if not bili_manager.running:
+        server.logger.error('bili manager is not running')
+        return
 
     command_manager = CommandManager(ctx=plg_ctx, bili_manager=bili_manager)
     command_manager.register_command()
 
 
 def on_unload(server: PluginServerInterface):
+    if not bili_manager.running:
+        server.logger.warning('bili manager is not running, exit directly!')
+        return
     bili_manager.stop()
     server.logger.info("unload bili live helper!")

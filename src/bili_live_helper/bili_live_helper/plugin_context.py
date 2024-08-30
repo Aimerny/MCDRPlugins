@@ -5,6 +5,8 @@ from mcdreforged.api.all import *
 from bili_live_helper.config.config import Config
 from bili_live_helper.config.data import DataConfig
 
+plugin_id = 'bili_live_helper'
+
 
 class PluginContext:
     mcdr_server: PluginServerInterface
@@ -58,4 +60,3 @@ _plugin_context: Optional[PluginContext] = None
 def load_plugin_context(ctx: PluginContext):
     global _plugin_context
     _plugin_context = ctx
-

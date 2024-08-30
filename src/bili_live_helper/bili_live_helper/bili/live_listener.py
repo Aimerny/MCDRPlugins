@@ -50,7 +50,6 @@ class LiveListener:
                 self.__logger.warning(f'handle event failed. no event handler provided! listener: {self.__room_id}')
                 return
             live_event = LiveEvent.parse_from(event)
-            self.__logger.info(f'{live_event}')
             self.__handler.handle_event(live_event)
 
         asyncio.create_task(self.__monitor.connect())
