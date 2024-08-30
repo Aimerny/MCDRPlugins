@@ -36,3 +36,8 @@ class PersonalEventReceiver(MCDRLiveEventReceiver):
 class BroadcastEventReceiver(MCDRLiveEventReceiver):
     def forward_danmu(self, danmu: DanmuInfo):
         self.server.broadcast(text=self.mcdr_forward_format(danmu.user, danmu.content))
+
+
+class ConsoleEventReceiver(MCDRLiveEventReceiver):
+    def forward_danmu(self, danmu: DanmuInfo):
+        self.logger.info(f'[Bilibili-Live]({danmu.user}):{danmu.content}')

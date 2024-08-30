@@ -5,9 +5,11 @@ from mcdreforged.api.all import *
 from asyncio import AbstractEventLoop, Queue
 from threading import Event
 
+from bili_live_helper.bili.event_handler import EventHandler
 from bili_live_helper.bili.live_listener import LiveListener
 from bili_live_helper.config.live_config import LiveConfig
 from bili_live_helper.config.config import Config
+from bili_live_helper.mcdr.mcdr_event_receiver import ConsoleEventReceiver, PersonalEventReceiver
 from bili_live_helper.plugin_context import PluginContext
 
 
@@ -62,10 +64,10 @@ class BiliManager:
             try:
                 (player, option) = await asyncio.wait_for(self.__submit_queue.get(), timeout=0.5)
                 live_config = self.__live_configs.get(player)
-                print(live_config)
                 if live_config is not None and live_config.enable:
                     if option == 'run':
-                        listener = await asyncio.create_task(self.run_listener(live_config.room_id, live_config.send_enable))
+                        listener = await asyncio.create_task(
+                            self.run_listener(live_config.room_id, live_config.send_enable, player, self.__config.console_output))
                         self.__running_listener[player] = listener
                     elif option == 'kill':
                         await asyncio.create_task(self.kill_listener(player))
@@ -73,9 +75,14 @@ class BiliManager:
             except asyncio.TimeoutError:
                 continue
 
-    async def run_listener(self, room_id: int, send_enable: bool) -> LiveListener:
+    async def run_listener(self, room_id: int, send_enable: bool, owner: str, console_output: bool = True) -> LiveListener:
         self.__logger.info('run listener')
         listener = LiveListener(room_id=room_id, logger=self.__logger, **self.__config.account.__dict__)
+        handler = EventHandler(logger=self.__logger)
+        if console_output:
+            handler.put_receiver(key='console', receiver=ConsoleEventReceiver(ctx=PluginContext.get()))
+        handler.put_receiver(key='personal', receiver=PersonalEventReceiver(owner=owner, ctx=PluginContext.get()))
+        listener.handler = handler
         if send_enable:
             listener.send_enable = True
         listener.start()

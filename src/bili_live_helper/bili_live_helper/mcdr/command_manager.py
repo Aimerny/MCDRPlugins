@@ -16,7 +16,10 @@ class CommandManager:
     def cmd_bind_room(self, source: CommandSource, context: CommandContext):
         pass
 
-    def cmd_enable(self, source: CommandSource, context: CommandContext):
+    def cmd_on(self, source: CommandSource, context: CommandContext):
+        pass
+
+    def cmd_off(self, source: CommandSource, context: CommandContext):
         pass
 
     def cmd_live_info(self, source: CommandSource, context: CommandContext):
@@ -30,7 +33,8 @@ class CommandManager:
         builder.command("!!blh", self.cmd_help)
         builder.command("!!blh help", self.cmd_help)
         builder.command("!!blh bind <rid>", self.cmd_bind_room)
-        builder.command("!!blh enable", self.cmd_enable)
+        builder.command("!!blh on", self.cmd_on)
+        builder.command("!!blh off", self.cmd_off)
         builder.command("!!blh info", self.cmd_live_info)
         builder.command("!!blh info <player>", self.cmd_player_live_info)
         builder.arg("rid", Text)

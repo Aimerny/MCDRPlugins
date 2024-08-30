@@ -40,5 +40,7 @@ class EventHandler:
         # skip msg from self
         if data.send_from_me:
             return
+        if len(self.__receivers.keys()) == 0:
+            self.__logger.warning('forward skip! receivers is empty')
         for key, receiver in self.__receivers.items():
             receiver.forward_danmu(data)
