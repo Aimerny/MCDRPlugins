@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/Aimerny/MCDRPlugins/compare/bili_live_helper-v1.0.0...bili_live_helper-v1.0.1) (2024-09-02)
+
+
+### Bug Fixes
+
+* **blh:** :bug: fix off command reply msg error ([ef24ef1](https://github.com/Aimerny/MCDRPlugins/commit/ef24ef188f46119c5cec670aca4abae7ec84e2f7))
+
 ## 1.0.0 (2024-08-30)
 
 
