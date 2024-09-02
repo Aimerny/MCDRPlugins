@@ -1,6 +1,6 @@
 {
   "id": "bili_live_helper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "BiliLiveHelper",
   "description": {
     "en_us": "A bilibili live help plugin on MCDR",
