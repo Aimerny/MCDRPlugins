@@ -79,7 +79,7 @@ class CommandManager:
             player = source.player
             if self.bili_manager.is_listener_running(player):
                 self.bili_manager.submit(player, OptionEnum.KILL)
-                return reply_info_message(source, tr('reply_message.kill_listener'))
+                return reply_info_message(source, tr('reply_message.kill_listener', RText(player, RColor.gray)))
             else:
                 return reply_warn_message(source, tr('raise_message.listener_not_found', RText(player, RColor.gray)))
 
