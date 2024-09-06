@@ -1,4 +1,5 @@
 import abc
+import logging
 
 from bili_live_helper.bili.event_handler import EventReceiver
 from bili_live_helper.bili.live_event import DanmuInfo
@@ -39,5 +40,12 @@ class BroadcastEventReceiver(MCDRLiveEventReceiver):
 
 
 class ConsoleEventReceiver(MCDRLiveEventReceiver):
+    def __init__(self, ctx: PluginContext, info_level: bool):
+        super().__init__(ctx)
+        if info_level:
+            self.custom_log = self.logger.info
+        else:
+            self.custom_log = self.logger.debug
+
     def forward_danmu(self, danmu: DanmuInfo):
-        self.logger.info(f'[Bilibili-Live]({danmu.user}):{danmu.content}')
+        self.custom_log(f'[Bilibili-Live]({danmu.user}):{danmu.content}')

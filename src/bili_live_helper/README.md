@@ -59,7 +59,7 @@
 ## 配置说明
 
 1. `data_file_path`: 数据文件的路径.持久化的信息会保存到这个文件
-2. `console_output`: 是否将接收到的弹幕输出到服务器控制台
+2. `console_output`: 是否将接收到的弹幕输出到服务器控制台,如果设为false则需要在debug模式才能看到
 3. `account`: 使用此插件需要一个真实的B站账号.`account`中是一些鉴权信息
    1. `uid`: 你的B站账号UID
    2. 其他: 参考 [获取 Credential 类所需信息](https://nemo2011.github.io/bilibili-api/#/get-credential)

@@ -93,8 +93,7 @@ class BiliManager:
         self.__logger.info('run listener')
         listener = LiveListener(room_id=room_id, logger=self.__logger, **self.__config.account.__dict__)
         handler = EventHandler(logger=self.__logger)
-        if console_output:
-            handler.put_receiver(key='console', receiver=ConsoleEventReceiver(ctx=PluginContext.get()))
+        handler.put_receiver(key='console', receiver=ConsoleEventReceiver(ctx=PluginContext.get(), info_level=console_output))
         handler.put_receiver(key='personal', receiver=PersonalEventReceiver(owner=owner, ctx=PluginContext.get()))
         listener.handler = handler
         if send_enable:
