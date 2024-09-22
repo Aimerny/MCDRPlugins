@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/Aimerny/MCDRPlugins/compare/bili_live_helper-v1.0.1...bili_live_helper-v1.1.0) (2024-09-06)
+
+
+### Features
+
+* **blh:** :sparkles: set default console output is debug mode ([54d23ec](https://github.com/Aimerny/MCDRPlugins/commit/54d23ec0823edd0a0c400aeeee00b302657a9733))
+
 ## [1.0.1](https://github.com/Aimerny/MCDRPlugins/compare/bili_live_helper-v1.0.0...bili_live_helper-v1.0.1) (2024-09-02)
 
 
