@@ -14,19 +14,24 @@ class CommandManager:
         self.plg_ctx = ctx
         self.bili_manager = bili_manager
 
-    def cmd_help(self, source: CommandSource, context: CommandContext):
+    @staticmethod
+    def cmd_help(source: CommandSource, context: CommandContext):
         prefix = RText(">> !!blh")
         separator = RText(' - | - ', RColor.dark_gray)
         help_message = RTextList(
             tr('help.header').set_color(RColor.dark_aqua), '\n',
-            RTextList(prefix, ' [help]', separator, tr('help.help_desc').set_color(RColor.yellow)).c(RAction.run_command, '!!blh help'),
+            RTextList(prefix, ' [help]', separator, tr('help.help_desc').set_color(RColor.yellow)).c(
+                RAction.run_command, '!!blh help'),
             '\n',
             RTextList(prefix, ' bind ', RText('<rid>').set_color(RColor.gray).h('直播间id'), separator,
                       tr('help.bind_desc').set_color(RColor.yellow)).c(
                 RAction.suggest_command, '!!blh bind '), '\n',
-            RTextList(prefix, ' on', separator, tr('help.on_desc').set_color(RColor.yellow)).c(RAction.run_command, '!!blh on'), '\n',
-            RTextList(prefix, ' off', separator, tr('help.off_desc').set_color(RColor.yellow)).c(RAction.run_command, '!!blh off'), '\n',
-            RTextList(prefix, ' info', separator, tr('help.info_desc').set_color(RColor.yellow)).c(RAction.run_command, '!!blh info'), '\n',
+            RTextList(prefix, ' on', separator, tr('help.on_desc').set_color(RColor.yellow)).c(RAction.run_command,
+                                                                                               '!!blh on'), '\n',
+            RTextList(prefix, ' off', separator, tr('help.off_desc').set_color(RColor.yellow)).c(RAction.run_command,
+                                                                                                 '!!blh off'), '\n',
+            RTextList(prefix, ' info', separator, tr('help.info_desc').set_color(RColor.yellow)).c(RAction.run_command,
+                                                                                                   '!!blh info'), '\n',
             tr('help.footer').set_color(RColor.dark_aqua)
         )
         reply_message(source, help_message, with_prefix=False)
@@ -35,6 +40,9 @@ class CommandManager:
         if source.is_console:
             return reply_message(source, tr('raise_message.player_command'))
         if isinstance(source, PlayerCommandSource):
+            if self.bili_manager.query_player_live_status(source.player):
+                return reply_error_message(source, tr('raise_message.not_allow_rebind_listener_running',
+                                                      RText(source.player, RColor.gray)))
             room_id = context.get('rid')
             if room_id is None:
                 return reply_error_message(source, tr('bind.room_id_invalid'))
@@ -91,10 +99,18 @@ class CommandManager:
             lives_conf = self.plg_ctx.mcdr_data.lives
             live_conf = lives_conf.get(player)
             if live_conf is not None:
-                return reply_message(source, self.__live_info_format(player, live_conf), with_prefix=False)
+                status = self.bili_manager.query_player_live_status(player)
+                return reply_message(source, self.__live_info_format(player, live_conf, status), with_prefix=False)
 
     def cmd_player_live_info(self, source: CommandSource, context: CommandContext):
-        pass
+        target = context.get('player')
+        if target is None or target == '':
+            return reply_error_message(source, tr('raise_message.player_missing'))
+        lives_conf = self.plg_ctx.mcdr_data.lives
+        live_conf = lives_conf.get(target)
+        if live_conf is not None:
+            status = self.bili_manager.query_player_live_status(target)
+            return reply_message(source, self.__live_info_format(target, live_conf, status), with_prefix=False)
 
     def cmd_admin(self, source: CommandSource, context: CommandContext):
         pass
@@ -107,7 +123,7 @@ class CommandManager:
         builder.command("!!blh on", self.cmd_on)
         builder.command("!!blh off", self.cmd_off)
         builder.command("!!blh info", self.cmd_live_info)
-        # builder.command("!!blh info <player>", self.cmd_player_live_info)
+        builder.command("!!blh query <player>", self.cmd_player_live_info)
         # builder.command("!!blh admin <type> <option>", self.cmd_admin)
 
         builder.arg("rid", Number)
@@ -118,9 +134,11 @@ class CommandManager:
         builder.register(server=self.plg_ctx.mcdr_server)
 
     @staticmethod
-    def __live_info_format(player: str, live_conf: LiveConfig) -> Union[str | RTextBase]:
+    def __live_info_format(player: str, live_conf: LiveConfig, status: bool) -> RTextBase:
         return RTextList(
             tr('info.header', RText(player, RColor.gray)).set_color(RColor.dark_aqua), '\n',
+            tr('info.room_status_template',
+               RText(tr('info.live_open') if status else RText(tr('info.live_close')), RColor.yellow)), '\n',
             tr('info.room_id_template', RText(live_conf.room_id, RColor.yellow)), '\n',
             tr('info.footer').set_color(RColor.dark_aqua)
         )

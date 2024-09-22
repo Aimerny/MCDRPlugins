@@ -121,3 +121,7 @@ class BiliManager:
             option_enum = option
         self.__submit_queue.put_nowait((player, option_enum))
         self.__logger.info(f'Task submitted: {(player, option_enum.value)}')
+
+    def query_player_live_status(self, player:str):
+        listener = self.__running_listener.get(player)
+        return listener is not None

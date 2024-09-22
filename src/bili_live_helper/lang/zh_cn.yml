@@ -5,6 +5,7 @@ bili_live_helper:
     live_conf_notfound: "未找到玩家{}的直播间配置信息"
     listener_is_running: "弹幕姬[{}]已经在运行了"
     listener_not_found: "[{}]的直播弹幕姬未启动"
+    not_allow_rebind_listener_running: "[{}]的直播弹幕姬正在运行中,不能更改直播间哦,请先关闭弹幕姬"
   reply_message:
     run_listener: "已开启直播间[{}]的弹幕姬"
     kill_listener: "[{}]已停止弹幕姬"
@@ -22,5 +23,8 @@ bili_live_helper:
     create_room_id: "已绑定直播间 [{}]"
   info:
     header: "===== [{}]的直播间信息 ====="
+    room_status_template: "直播间开启状态: [{}]"
     room_id_template: "+ 直播间id: [{}]"
     footer: "=========================="
+    live_open: "开启"
+    live_close: "关闭"
