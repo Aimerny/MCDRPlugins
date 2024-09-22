@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.0](https://github.com/Aimerny/MCDRPlugins/compare/bili_live_helper-v1.1.0...bili_live_helper-v1.2.0) (2024-09-22)
+
+
+### Features
+
+* **blh:** :sparkles: add `query` command && add limit that rebind not allowed when listener running ([897a9c3](https://github.com/Aimerny/MCDRPlugins/commit/897a9c3fd1cb29fdf8fff81549bc4a8379bbb28c))
+* **blh:** :sparkles: register `query` command && register help message ([56ade08](https://github.com/Aimerny/MCDRPlugins/commit/56ade089d96e1bb547b1f7026bada82691e0f8a7))
+
 ## [1.1.0](https://github.com/Aimerny/MCDRPlugins/compare/bili_live_helper-v1.0.1...bili_live_helper-v1.1.0) (2024-09-06)
 
 
