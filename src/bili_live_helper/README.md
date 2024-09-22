@@ -27,6 +27,7 @@
  >> !!blh on - | - 启动直播弹幕姬
  >> !!blh off - | - 停止直播弹幕姬
  >> !!blh info - | - 查看我的直播间信息
+ >> !!blh query - | - 查看其他玩家的直播间信息
  ------- Authored by Aimerny --------
 ```
 
