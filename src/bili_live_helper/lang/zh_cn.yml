@@ -10,12 +10,14 @@ bili_live_helper:
     run_listener: "已开启直播间[{}]的弹幕姬"
     kill_listener: "[{}]已停止弹幕姬"
   help:
+    subject: "B站直播弹幕姬"
     header: "---------- BiliLiveHelper ----------"
     help_desc: "获取帮助"
     bind_desc: "绑定直播间id"
     on_desc: "启动直播弹幕姬"
     off_desc: "停止直播弹幕姬"
     info_desc: "查看我的直播间信息"
+    query_desc: "查看其他玩家的直播间信息"
     footer: "------- Authored by Aimerny --------"
   bind:
     room_id_invalid: "绑定直播间失败,需要输入合法的房间号!"

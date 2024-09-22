@@ -5,6 +5,7 @@ from bili_live_helper.config.data import DataConfig
 from bili_live_helper.mcdr.bili_manager import BiliManager
 from bili_live_helper.plugin_context import PluginContext, load_plugin_context
 from bili_live_helper.mcdr.command_manager import CommandManager
+from bili_live_helper.util.tr_util import tr
 
 bili_manager: BiliManager
 
@@ -33,6 +34,7 @@ def on_load(server: PluginServerInterface, old):
         server.logger.error('bili manager is not running')
         return
 
+    server.register_help_message('!!blh', tr('help.subject'))
     command_manager = CommandManager(ctx=plg_ctx, bili_manager=bili_manager)
     command_manager.register_command()
 

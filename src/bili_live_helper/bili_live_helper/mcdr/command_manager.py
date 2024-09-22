@@ -32,6 +32,8 @@ class CommandManager:
                                                                                                  '!!blh off'), '\n',
             RTextList(prefix, ' info', separator, tr('help.info_desc').set_color(RColor.yellow)).c(RAction.run_command,
                                                                                                    '!!blh info'), '\n',
+            RTextList(prefix, ' query', separator,
+                      tr('help.query_desc').set_color(RColor.yellow)).c(RAction.suggest_command, '!!blh query '), '\n',
             tr('help.footer').set_color(RColor.dark_aqua)
         )
         reply_message(source, help_message, with_prefix=False)
@@ -130,7 +132,6 @@ class CommandManager:
         builder.arg("player", Text)
         # builder.arg("type", Text)
         # builder.arg("option", Text)
-
         builder.register(server=self.plg_ctx.mcdr_server)
 
     @staticmethod
