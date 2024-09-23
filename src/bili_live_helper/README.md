@@ -28,8 +28,8 @@
  >> !!blh off - | - 停止直播弹幕姬
  >> !!blh info - | - 查看我的直播间信息
  >> !!blh query - | - 查看其他玩家的直播间信息
- >> !!blh send<danmu> - | - 向直播间发送弹幕
- >> !!blh s<danmu> - | - 向直播间发送弹幕
+ >> !!blh send <danmu> - | - 向直播间发送弹幕
+ >> !!blh s <danmu> - | - 向直播间发送弹幕
  ------- Authored by Aimerny --------
 
 ```
