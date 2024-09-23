@@ -3,7 +3,7 @@ import logging
 from typing import Union
 
 from bilibili_api.live import LiveDanmaku, LiveRoom
-from bilibili_api import Credential
+from bilibili_api import Credential, Danmaku
 from bili_live_helper.bili.event_handler import EventHandler
 from bili_live_helper.bili.live_event import LiveEvent
 
@@ -56,3 +56,6 @@ class LiveListener:
 
     def stop(self):
         asyncio.create_task(self.__monitor.disconnect())
+
+    async def send_message(self, msg: str):
+        await self.__sender.send_danmaku(Danmaku(msg))

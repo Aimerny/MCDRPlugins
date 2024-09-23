@@ -17,6 +17,7 @@ from bili_live_helper.plugin_context import PluginContext
 class OptionEnum(Enum):
     RUN = 'run'
     KILL = 'kill'
+    SEND_MSG = 'send_msg'
 
 
 class BiliManager:
@@ -74,7 +75,7 @@ class BiliManager:
         self.__logger.debug(f"__event_loop:{self.__event_loop}")
         while not self.__stop_event.is_set() or not self.__submit_queue.empty():
             try:
-                (player, option) = await asyncio.wait_for(self.__submit_queue.get(), timeout=0.5)
+                (player, option, args) = await asyncio.wait_for(self.__submit_queue.get(), timeout=0.5)
                 live_config = self.__live_configs.get(player)
                 if live_config is not None and live_config.enable:
                     if option == OptionEnum.RUN:
@@ -84,6 +85,8 @@ class BiliManager:
                         self.__running_listener[player] = listener
                     elif option == OptionEnum.KILL:
                         await asyncio.create_task(self.kill_listener(player))
+                    elif option == OptionEnum.SEND_MSG:
+                        await asyncio.create_task(self.send_message(player, *args))
                 self.__submit_queue.task_done()
             except asyncio.TimeoutError:
                 continue
@@ -110,7 +113,7 @@ class BiliManager:
             return
         self.__logger.error(f'bili-live-listener for {player} not found')
 
-    def submit(self, player: str, option: str | OptionEnum):
+    def submit(self, player: str, option: str | OptionEnum, *args):
         if isinstance(option, str):
             try:
                 option_enum = OptionEnum(option.upper())
@@ -119,9 +122,14 @@ class BiliManager:
                 return
         else:
             option_enum = option
-        self.__submit_queue.put_nowait((player, option_enum))
-        self.__logger.info(f'Task submitted: {(player, option_enum.value)}')
+        self.__submit_queue.put_nowait((player, option_enum, args))
+        self.__logger.info(f'Task submitted: {(player, option_enum.value, args)}')
 
-    def query_player_live_status(self, player:str):
+    def query_player_live_status(self, player: str):
         listener = self.__running_listener.get(player)
         return listener is not None
+
+    async def send_message(self, player: str, message: str):
+        listener = self.__running_listener.get(player)
+        if listener is not None:
+            await listener.send_message(message)

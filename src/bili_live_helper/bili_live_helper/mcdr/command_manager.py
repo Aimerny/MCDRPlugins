@@ -114,6 +114,21 @@ class CommandManager:
             status = self.bili_manager.query_player_live_status(target)
             return reply_message(source, self.__live_info_format(target, live_conf, status), with_prefix=False)
 
+    def cmd_send_msg(self, source: CommandSource, context: CommandContext):
+        if source.is_console:
+            return reply_error_message(source, tr('raise_message.player_command'))
+        if isinstance(source, PlayerCommandSource):
+            player = source.player
+            lives_conf = self.plg_ctx.mcdr_data.lives
+            live_conf = lives_conf.get(player)
+            if not live_conf.send_enable:
+                return reply_error_message(source, tr('raise_message.listener_send_disable'))
+            status = self.bili_manager.query_player_live_status(player)
+            if not status:
+                return reply_error_message(source, tr('raise_message.listener_closed'))
+            message = f"<{player}>{context.get('send_msg')}"
+            self.bili_manager.submit(player, OptionEnum.SEND_MSG, message)
+
     def cmd_admin(self, source: CommandSource, context: CommandContext):
         pass
 
@@ -126,10 +141,13 @@ class CommandManager:
         builder.command("!!blh off", self.cmd_off)
         builder.command("!!blh info", self.cmd_live_info)
         builder.command("!!blh query <player>", self.cmd_player_live_info)
+        builder.command("!!blh s <send_msg>", self.cmd_send_msg)
+        builder.command("!!blh send <send_msg>", self.cmd_send_msg)
         # builder.command("!!blh admin <type> <option>", self.cmd_admin)
 
         builder.arg("rid", Number)
         builder.arg("player", Text)
+        builder.arg("send_msg", GreedyText)
         # builder.arg("type", Text)
         # builder.arg("option", Text)
         builder.register(server=self.plg_ctx.mcdr_server)

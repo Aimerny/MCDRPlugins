@@ -6,6 +6,9 @@ bili_live_helper:
     listener_is_running: "弹幕姬[{}]已经在运行了"
     listener_not_found: "[{}]的直播弹幕姬未启动"
     not_allow_rebind_listener_running: "[{}]的直播弹幕姬正在运行中,不能更改直播间哦,请先关闭弹幕姬"
+    listener_send_disable: "服务器未开启发送消息功能"
+    listener_closed: "弹幕姬未开启,请先开启弹幕姬"
+    send_msg_failed_reason: "发送消息失败,请稍后再试"
   reply_message:
     run_listener: "已开启直播间[{}]的弹幕姬"
     kill_listener: "[{}]已停止弹幕姬"
