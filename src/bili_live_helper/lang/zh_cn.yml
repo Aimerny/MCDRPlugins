@@ -21,6 +21,7 @@ bili_live_helper:
     off_desc: "停止直播弹幕姬"
     info_desc: "查看我的直播间信息"
     query_desc: "查看其他玩家的直播间信息"
+    send_desc: "向直播间发送弹幕"
     footer: "------- Authored by Aimerny --------"
   bind:
     room_id_invalid: "绑定直播间失败,需要输入合法的房间号!"

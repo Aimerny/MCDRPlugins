@@ -34,7 +34,13 @@ class CommandManager:
                                                                                                    '!!blh info'), '\n',
             RTextList(prefix, ' query', separator,
                       tr('help.query_desc').set_color(RColor.yellow)).c(RAction.suggest_command, '!!blh query '), '\n',
+            RTextList(prefix, ' send ', RText('<danmu>').set_color(RColor.gray).h('弹幕内容'), separator,
+                      tr('help.send_desc').set_color(RColor.yellow)).c(RAction.suggest_command, '!!blh send '), '\n',
+            RTextList(prefix, ' s ', RText('<danmu>').set_color(RColor.gray).h('弹幕内容'), separator,
+                      tr('help.send_desc').set_color(RColor.yellow)).c(RAction.suggest_command, '!!blh s '), '\n',
+
             tr('help.footer').set_color(RColor.dark_aqua)
+
         )
         reply_message(source, help_message, with_prefix=False)
 

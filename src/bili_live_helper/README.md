@@ -17,7 +17,7 @@
 - [x] 玩家可以随时启停弹幕姬
 - [ ] 支持查询订阅的直播间的状态
 - [ ] admin轻松管理所有玩家的订阅信息
-- [ ] 游戏内通过直播姬账号发送弹幕,即时回应
+- [x] 游戏内通过直播姬账号发送弹幕,即时回应
 
 # :robot: 指令
 ```
@@ -28,7 +28,10 @@
  >> !!blh off - | - 停止直播弹幕姬
  >> !!blh info - | - 查看我的直播间信息
  >> !!blh query - | - 查看其他玩家的直播间信息
+ >> !!blh send<danmu> - | - 向直播间发送弹幕
+ >> !!blh s<danmu> - | - 向直播间发送弹幕
  ------- Authored by Aimerny --------
+
 ```
 
 # :pushpin: 依赖
@@ -36,11 +39,11 @@
 | python依赖项           | 版本      |
 |---------------------|---------|
 | mcdreforged         | ^2.12.0 |
-| bilibili-python-api | ^16.2.0 |
+| bilibili-python-api | ^16.3.0 |
 
 | mcdr依赖项      | 版本      |
 |--------------|---------|
-| mcdreforged  | ^2.12.0 |
+| mcdreforged  | ^2.13.0 |
 
 # :wrench: 配置
 ```json5
@@ -70,6 +73,14 @@
 
 # :art: 功能预览
 
+## 消息同步
+
 ![image-20240831032822332](https://cdn.jsdelivr.net/gh/aimerny/picgo@main/image-20240831032822332.png)
 
 ![image-20240831032855128](https://cdn.jsdelivr.net/gh/aimerny/picgo@main/image-20240831032855128.png)
+
+## MC发送弹幕
+
+![](https://cdn.jsdelivr.net/gh/aimerny/picgo@main/image-20240924021814482.png)
+
+![](https://cdn.jsdelivr.net/gh/aimerny/picgo@main/image-20240924021842208.png)
