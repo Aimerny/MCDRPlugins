@@ -1,2 +1,2 @@
-mcdreforged
-bilibili-api-python
+mcdreforged>=2.13.0
+bilibili-api-python>=16.3.0

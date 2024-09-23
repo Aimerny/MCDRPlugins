@@ -35,7 +35,7 @@ class LiveListener:
                  ac_time_value: Union[str, None], handler: EventHandler = None):
         self.__room_id = room_id
         self.__uid = uid
-        self._credential = Credential(sessdata=sessdata, bili_jct=bili_jct, buvid3=buvid3, ac_time_value=ac_time_value)
+        self._credential = Credential(sessdata=sessdata, dedeuserid=str(uid), bili_jct=bili_jct, buvid3=buvid3, ac_time_value=ac_time_value)
         self.__monitor = LiveDanmaku(room_id, credential=self._credential)
         self.__sender = LiveRoom(room_id, credential=self._credential)
         self.__handler = handler
