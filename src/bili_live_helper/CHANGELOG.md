@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.3.0](https://github.com/Aimerny/MCDRPlugins/compare/bili_live_helper-v1.2.0...bili_live_helper-v1.3.0) (2024-09-23)
+
+
+### Features
+
+* **blh:** :ambulance: credential add dedeuserid && update bili-api-python dep to 16.3.0 ([300cfaf](https://github.com/Aimerny/MCDRPlugins/commit/300cfafb4da8fc8356e9e6da190f9eaa4fa93a3e)), closes [#49](https://github.com/Aimerny/MCDRPlugins/issues/49)
+* **blh:** :memo: update help && update readme description ([74c8e64](https://github.com/Aimerny/MCDRPlugins/commit/74c8e64be37a2c658678b0ae3a615f7ed81a1521))
+* **blh:** :sparkles: support send message to bilibili ([0102474](https://github.com/Aimerny/MCDRPlugins/commit/0102474fcd3db6a2e8ef5438e3f1351c843f75ea))
+
 ## [1.2.0](https://github.com/Aimerny/MCDRPlugins/compare/bili_live_helper-v1.1.0...bili_live_helper-v1.2.0) (2024-09-22)
 
 
