@@ -16,3 +16,4 @@ class Config(Serializable):
     data_file_path: str = 'data.json'
     console_output: bool = True
     account: AccountConfig = AccountConfig()
+    send: bool = True

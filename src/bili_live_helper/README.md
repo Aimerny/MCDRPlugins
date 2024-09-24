@@ -57,7 +57,8 @@
         "bili_jct": "",
         "buvid3": "",
         "ac_time_value": ""
-    }
+    },
+   "send":true
 }
 ```
 ## 配置说明
@@ -67,6 +68,7 @@
 3. `account`: 使用此插件需要一个真实的B站账号.`account`中是一些鉴权信息
    1. `uid`: 你的B站账号UID
    2. 其他: 参考 [获取 Credential 类所需信息](https://nemo2011.github.io/bilibili-api/#/get-credential)
+4. `send`: 是否允许服务器成员使用上述配置中的`account`发送消息到对应直播间,默认为true
 
 > [!note]
 > B站的账号如果没有在其他地方登录基本不会过期,建议开一个小号做这件事情

@@ -80,7 +80,7 @@ class BiliManager:
                 if live_config is not None and live_config.enable:
                     if option == OptionEnum.RUN:
                         listener = await asyncio.create_task(
-                            self.run_listener(live_config.room_id, live_config.send_enable, player,
+                            self.run_listener(live_config.room_id, player,
                                               self.__config.console_output))
                         self.__running_listener[player] = listener
                     elif option == OptionEnum.KILL:
@@ -91,7 +91,7 @@ class BiliManager:
             except asyncio.TimeoutError:
                 continue
 
-    async def run_listener(self, room_id: int, send_enable: bool, owner: str,
+    async def run_listener(self, room_id: int, owner: str,
                            console_output: bool = True) -> LiveListener:
         self.__logger.info('run listener')
         listener = LiveListener(room_id=room_id, logger=self.__logger, **self.__config.account.__dict__)
@@ -99,8 +99,6 @@ class BiliManager:
         handler.put_receiver(key='console', receiver=ConsoleEventReceiver(ctx=PluginContext.get(), info_level=console_output))
         handler.put_receiver(key='personal', receiver=PersonalEventReceiver(owner=owner, ctx=PluginContext.get()))
         listener.handler = handler
-        if send_enable:
-            listener.send_enable = True
         listener.start()
         return listener
 

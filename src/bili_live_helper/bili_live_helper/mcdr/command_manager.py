@@ -59,7 +59,6 @@ class CommandManager:
                 new_live_conf = LiveConfig()
                 new_live_conf.enable = True
                 new_live_conf.room_id = room_id
-                new_live_conf.send_enable = False
                 lives[source.player] = new_live_conf
                 reply_info_message(source, tr('bind.create_room_id', RText(room_id, RColor.red),
                                               RText(room_id, RColor.dark_green)))
@@ -125,14 +124,12 @@ class CommandManager:
             return reply_error_message(source, tr('raise_message.player_command'))
         if isinstance(source, PlayerCommandSource):
             player = source.player
-            lives_conf = self.plg_ctx.mcdr_data.lives
-            live_conf = lives_conf.get(player)
-            if not live_conf.send_enable:
+            if not self.plg_ctx.mcdr_config.send:
                 return reply_error_message(source, tr('raise_message.listener_send_disable'))
             status = self.bili_manager.query_player_live_status(player)
             if not status:
                 return reply_error_message(source, tr('raise_message.listener_closed'))
-            message = f"<{player}>{context.get('send_msg')}"
+            message = f"<{player}> {context.get('send_msg')}"
             self.bili_manager.submit(player, OptionEnum.SEND_MSG, message)
 
     def cmd_admin(self, source: CommandSource, context: CommandContext):
