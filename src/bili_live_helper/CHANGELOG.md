@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/Aimerny/MCDRPlugins/compare/bili_live_helper-v1.3.0...bili_live_helper-v1.3.1) (2024-09-24)
+
+
+### Bug Fixes
+
+* **blh:** :recycle: move `send_enable` from live_config to mcdr_config and rename to `send` ([9929d76](https://github.com/Aimerny/MCDRPlugins/commit/9929d763132a58faa039497641ed9be6945c6b28))
+
 ## [1.3.0](https://github.com/Aimerny/MCDRPlugins/compare/bili_live_helper-v1.2.0...bili_live_helper-v1.3.0) (2024-09-23)
 
 
