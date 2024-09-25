@@ -1,6 +1,6 @@
 from mcdreforged.api.all import *
 
-from offline_whitelist_reforged.Config import Config
+from offline_whitelist_reforged.config import Config
 from offline_whitelist_reforged.plugin import Plugin
 
 plugin: Plugin
