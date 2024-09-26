@@ -2,6 +2,9 @@
 
 简单小巧的离线服白名单管理插件
 
+> [!IMPORTANT]
+> 自v2.0.0起,此插件增加依赖: [Whitelist API](../whitelist_api)
+
 ## 使用方式
 ```
 !!wr help - 显示帮助消息
