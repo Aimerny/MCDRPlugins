@@ -36,3 +36,6 @@ def on_load(server, old):
     whitelist_api.enable_whitelist()        # 开启服务器白名单功能
     whitelist_api.disable_whitelist()       # 关闭服务器白名单功能
 ```
+# 🎾 使用此api的插件集合
+
+1. [Offline Whitelist Reforged](../offline_whitelist_reforged): 简单小巧的离线服白名单插件
