@@ -11,6 +11,7 @@
   ],
   "link": "https://github.com/Aimerny/OfflineWhitelistReforged",
   "dependencies": {
-    "mcdreforged": "^2.6.0"
+    "mcdreforged": "^2.6.0",
+    "whitelist_api": "^1.0.0"
   }
 }

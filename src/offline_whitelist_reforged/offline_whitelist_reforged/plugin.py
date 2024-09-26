@@ -26,5 +26,5 @@ class Plugin:
     def __init__(self, server: PluginServerInterface, config: Config):
         self.__server = server
         self.__whitelist = load_whitelist(server)
-        self.__command_handler = CommandHandler(server, config, self.__whitelist)
+        self.__command_handler = CommandHandler(server, config)
         self.__config = config
