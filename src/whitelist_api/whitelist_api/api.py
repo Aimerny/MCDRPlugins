@@ -84,6 +84,14 @@ class WhitelistApi:
         with open(self.whitelist_file_path(), 'w', encoding='UTF-8') as f:
             f.write(json.dumps(whitelist_json, indent=2, separators=(',', ':'), ensure_ascii=False))
 
+    def remove_player(self, player: str) -> bool:
+        for index, p in enumerate(self.__whitelist):
+            if p.name == player:
+                self.__whitelist.remove(p)
+                self.save_whitelist()
+                return True
+        return False
+
     def start_watchdog(self):
         if self.__running:
             return

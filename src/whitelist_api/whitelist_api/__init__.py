@@ -12,7 +12,7 @@ __psi: PluginServerInterface
 
 class WhitelistException(Exception):
     def __init__(self, msg):
-        super.__init__(msg)
+        super().__init__(msg)
 
 
 def get_whitelist() -> List[PlayerInfo]:
@@ -47,7 +47,7 @@ def remove_player(player: str):
     players = get_whitelist_names()
     if player not in players:
         raise WhitelistException(f"{player} is not exist")
-    __psi.execute(f'whitelist remove {player}')
+    __api.remove_player(player)
 
 
 def enable_whitelist():
