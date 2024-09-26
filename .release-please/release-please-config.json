@@ -26,6 +26,9 @@
     },
     "src/player_last_play": {
       "package-name": "player_last_play"
+    },
+    "src/whitelist_api": {
+      "package-name": "whitelist_api"
     }
   }
 }
