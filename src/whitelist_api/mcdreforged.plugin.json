@@ -1,0 +1,16 @@
+{
+  "id": "whitelist_api",
+  "version": "1.0.0",
+  "name": "WhitelistAPI",
+  "description": {
+    "en_us": "whitelist common api",
+    "zh_cn": "通用的白名单API"
+  },
+  "author": [
+    "Aimerny"
+  ],
+  "link": "https://github.com/Aimerny/OfflineWhitelistReforged",
+  "dependencies": {
+    "mcdreforged": "^2.6.0"
+  }
+}
