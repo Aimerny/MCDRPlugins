@@ -1,6 +1,6 @@
 {
   "id": "offline_whitelist_reforged",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "name": "OfflineWhitelistReforged",
   "description": {
     "en_us": "A whitelist plugin in offline server",
