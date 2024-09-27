@@ -1,13 +1,15 @@
-# BiliLiveHelper | B站直播助手-弹幕姬
-
 ---
+nav: 
+  title: 插件
+  order: 0
+title: Bili Live Helper
+---
+
+# BiliLiveHelper | B站直播助手-弹幕姬
 
 支持将b站直播间的弹幕同步到mc中
 
-> [!important]
-> 此插件仅用于学习交流,请勿用于违法犯罪或其他不良用途.
-
-# :sparkles: 功能
+# ✨ 功能
 
 **BiliLiveHelper**是一款~~功能丰富的~~MCDR插件,能够实现将[bilibili](https://bilibili.com)(以下简称"B站)
 直播间中的弹幕信息实时同步到MC聊天板中.
@@ -19,7 +21,7 @@
 - [ ] admin轻松管理所有玩家的订阅信息
 - [x] 游戏内通过直播姬账号发送弹幕,即时回应
 
-# :robot: 指令
+# 🤖 指令
 ```
  ---------- BiliLiveHelper ----------
  >> !!blh [help] - | - 获取帮助
@@ -34,7 +36,7 @@
 
 ```
 
-# :pushpin: 依赖
+# 📌 依赖
 
 | python依赖项           | 版本      |
 |---------------------|---------|
@@ -45,7 +47,7 @@
 |--------------|---------|
 | mcdreforged  | ^2.13.0 |
 
-# :wrench: 配置
+# 🔨 配置
 ```json5
 {
     "enable": true,
@@ -70,10 +72,9 @@
    2. 其他: 参考 [获取 Credential 类所需信息](https://nemo2011.github.io/bilibili-api/#/get-credential)
 4. `send`: 是否允许服务器成员使用上述配置中的`account`发送消息到对应直播间,默认为true
 
-> [!note]
 > B站的账号如果没有在其他地方登录基本不会过期,建议开一个小号做这件事情
 
-# :art: 功能预览
+# 🎨 功能预览
 
 ## 消息同步
 
