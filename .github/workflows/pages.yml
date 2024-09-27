@@ -1,0 +1,34 @@
+name: build-pages
+on:
+  push:
+    branches:
+      - pages
+# workflow
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - name: Build Pages
+        run: |
+          npm install
+          npm run build
+
+      - name: Deploy to Github
+        uses: JamesIves/github-pages-deploy-action@4.0.0
+        with:
+          branch: build
+          folder: build
+
