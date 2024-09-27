@@ -1,21 +1,23 @@
-# dumi app
+# AMP
 
-## Getting Started
+A static site base on [dumi](https://d.umijs.org).
 
-Install dependencies,
-
-```bash
-$ npm i
-```
-
-Start the dev server,
+## Development
 
 ```bash
+# install dependencies
+$ npm install
+
+# start dev server
 $ npm start
-```
 
-Build site app,
-
-```bash
+# build docs
 $ npm run build
+
+# Locally preview the production build
+$ npm run preview
 ```
+
+## LICENSE
+
+MIT
