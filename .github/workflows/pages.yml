@@ -1,34 +1,37 @@
-name: build-pages
+name: github pages
+
 on:
   push:
     branches:
-      - pages
-# workflow
+      - pages # default branch
+
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [16.x]
-
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
+        with:
+          # 如果配置 themeConfig.lastUpdated 为 false，则不需要添加该参数以加快检出速度
+          fetch-depth: 0
 
       - name: Use node
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-      - name: Build Pages
-        run: |
-          npm install
-          npm run build
+         node-version: 16.x
 
-      - name: Deploy to Github
-        uses: JamesIves/github-pages-deploy-action@4.0.0
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./view
+
+      - name: Build with dumi
+        # 文档编译命令，如果是 react 模板需要修改为 npm run docs:build
+        run: npm run build
+        working-directory: ./view
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          branch: build
-          folder: build
-
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # 文档目录，如果是 react 模板需要修改为 docs-dist
+          publish_dir: ./view/dist
