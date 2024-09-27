@@ -8,11 +8,20 @@ export default defineConfig({
   themeConfig: {
     name: 'AMPR',
     lastUpdated: true,
-    logo: 'public/icon.svg',
-
+    logo: '/icon.svg',
+    prefersColor: { default: 'auto' },
+    footer: 'Copyright © 2024 | Powered by <a href="https://github.com/Aimerny">Aimerny</a><br/>Thanks for dumi',
+    socialLinks: {
+      github: 'https://github.com/Aimerny/MCDRPlugins',
+    }
   },
   locales: [
     { id: 'zh-CN', name: '中文' },
-    { id: 'en-US', name: 'EN' },
+    // { id: 'en-US', name: 'EN' },
   ],
+  alias: {
+    "plugins": "../src/",
+    "root":"../",
+
+  }
 });
