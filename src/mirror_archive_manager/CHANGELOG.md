@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/Aimerny/MCDRPlugins/compare/mirror_archive_manager-v0.1.1...mirror_archive_manager-v0.1.2) (2024-09-29)
+
+
+### Bug Fixes
+
+* **mam:** :bug: skip load mam if pb is disabled ([4a63d12](https://github.com/Aimerny/MCDRPlugins/commit/4a63d127631ac8e6d900292accef9b323b2587f4))
+
 ## [0.1.1](https://github.com/Aimerny/MCDRPlugins/compare/mirror_archive_manager-v0.1.0...mirror_archive_manager-v0.1.1) (2024-09-29)
 
 
