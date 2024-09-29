@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/Aimerny/MCDRPlugins/compare/mirror_archive_manager-v0.1.0...mirror_archive_manager-v0.1.1) (2024-09-29)
+
+
+### Bug Fixes
+
+* **mam:** :bug: add dependecy 'uvicorn' ([df2386d](https://github.com/Aimerny/MCDRPlugins/commit/df2386d2af9685f66009c21fc5d5608820dab9f1))
+
 ## [0.1.0](https://github.com/Aimerny/MCDRPlugins/compare/MirrorArchiveManager-v0.0.2...MirrorArchiveManager-v0.1.0) (2024-08-28)
 
 
