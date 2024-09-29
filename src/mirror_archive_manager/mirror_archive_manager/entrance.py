@@ -24,6 +24,9 @@ def on_load(server: PluginServerInterface, old):
     try:
         config = server.load_config_simple(target_class=Config, failure_policy='raise')
         set_config_instance(config)
+        pb_instance = server.get_plugin_instance('prime_backup')
+        if not pb_instance.is_enabled():
+            server.logger.warning('prime backup is disabled, mam load skip!')
         if is_main():
             server.logger.info(f'MAM running with main role!')
             start_main(server)
