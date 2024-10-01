@@ -3,9 +3,9 @@
 使用[KookAPI](https://github.com/Aimerny/KookAPI)实现的MCDR服务器管理插件
 
 > [!IMPORTANT]
-> 自v2.0.0起,此插件增加依赖: [Whitelist API](../whitelist_api),移除对[Kook API](../kook_api)的依赖
+> 自v1.0.0起,此插件增加依赖: [Whitelist API](../whitelist_api),移除对[Kook API](../kook_api)的依赖
 > 
-> 更新亮点: v2.0.0摒弃了v1版本冗长的链路,从与kook网关的交互到对消息事件的处理全都内聚在Kookin插件中
+> 更新亮点: v1.0.0摒弃了v0.x版本冗长的链路,从与kook网关的交互到对消息事件的处理全都内聚在Kookin插件中
 
 
 > 该插件的功能移植自[QQ Chat](https://github.com/AnzhiZhang/MCDReforgedPlugins/tree/master/src/qq_chat)插件
@@ -44,6 +44,7 @@ A: 如图,打开网页端Kook,进入指定频道后,这一串数字就是对应�
 | 配置项               | 配置说明       | 类型                 | 示例                 | 
 |-------------------|------------|--------------------|--------------------|
 | token             | 机器人Token   | string             | 从Kook开发者中心的机器人页面获取 |
+| prefixes          | 指令的前缀      | Array[string]      | ["/"]              |
 | admin_channel     | 服务器管理频道    | Array[channelInfo] | -                  |
 | public_channel    | 服务器公共频道    | Array[channelInfo] | -                  |
 | sync_chat_channel | 服务器消息同步频道  | Array[channelInfo] | -                  |
@@ -51,7 +52,7 @@ A: 如图,打开网页端Kook,进入指定频道后,这一串数字就是对应�
 | channel_id        | 频道ID       | string             | 获取方式见上             |
 | admins            | 管理员        | Array[string]      | ["Aimerny#0476"]   |
 | server_name       | Kook展示服务器名 | string             | Survival           |
-| prefixes          | 指令的前缀      | Array[string]      | ["/"]              |
+
 
 > 1. 只有使用`!!kk` 指令的消息才会被发送到服务器公共频道中
 > 2. 在服务器公共频道中的消息只有使用/mc指令的消息才会发送到服务器中
