@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/Aimerny/MCDRPlugins/compare/offline_whitelist_reforged-v2.0.0...offline_whitelist_reforged-v2.0.1) (2024-10-01)
+
+
+### Bug Fixes
+
+* **owr:** :arrow_up: `whitelist_api` least 1.0.1 ([064c2d3](https://github.com/Aimerny/MCDRPlugins/commit/064c2d37934854bc20f78f16114ee6a1418eb9f7))
+
 ## [2.0.0](https://github.com/Aimerny/MCDRPlugins/compare/offline_whitelist_reforged-v1.2.0...offline_whitelist_reforged-v2.0.0) (2024-09-26)
 
 
