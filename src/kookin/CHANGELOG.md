@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/Aimerny/MCDRPlugins/compare/kookin-v1.0.0...kookin-v1.0.1) (2024-10-01)
+
+
+### Bug Fixes
+
+* **kookin:** :arrow_up: use fixed `whitelist_api` ([2308ebe](https://github.com/Aimerny/MCDRPlugins/commit/2308ebe8f6955e0219d602a7ef23d328243cd720))
+
 ## [1.0.0](https://github.com/Aimerny/MCDRPlugins/compare/kookin-v0.2.0...kookin-v1.0.0) (2024-10-01)
 
 
