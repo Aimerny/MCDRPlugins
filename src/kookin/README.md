@@ -1,6 +1,6 @@
 # KookIn
 
-使用[KookAPI](https://github.com/Aimerny/KookAPI)实现的MCDR服务器管理插件
+~~使用[KookAPI](https://github.com/Aimerny/KookAPI)实现的MCDR服务器管理插件~~
 
 > [!IMPORTANT]
 > 自v1.0.0起,此插件增加依赖: [Whitelist API](../whitelist_api),移除对[Kook API](../kook_api)的依赖
@@ -33,8 +33,14 @@
 ## Tips
 Q: 如何获取频道ID?
 
-A: 如图,打开网页端Kook,进入指定频道后,这一串数字就是对应的频道ID
+A: 如图,打开网页端Kook,进入指定频道后,这一串数字就是对应的Kook服务器ID(guild_id)和频道ID(channel_id)
 ![](https://cdn.jsdelivr.net/gh/aimerny/picgo@main/image-20241002012416938.png)
+例如: `https://www.kookapp.cn/app/channels/8474959284287105/3168870203890905` 中
+* guild_id: 8474959284287105
+* channel_id: 3168870203890905
+
+> [!NOTE]
+> 当前的Kookin配置中,只需要用到`channel_id`,也就是说,可以跨多个Kook服务器使用同一个Kookin实例
 
 
 ## 配置项
@@ -74,6 +80,7 @@ A: 如图,打开网页端Kook,进入指定频道后,这一串数字就是对应�
 /whitelist =>   白名单管理
 /list      =>   在线玩家列表
 ```
+> 可以使用`/help`查询其他指令的帮助,例如: `/help whitelist`
 
 #### 离线消息
 
