@@ -46,6 +46,12 @@ class UserInfo(Serializable):
 
 
 class Config(Serializable):
+    # Bot Token
+    token: str = 'your token'
+    # 指令前缀,允许配置多个
+    prefixes: List[str] = [
+        '/'
+    ]
     # 管理频道列表
     admin_channel: List[dict] = [ChannelInfo('机器人管理频道', '1145141919810').serialize()]
     # 公共频道列表
