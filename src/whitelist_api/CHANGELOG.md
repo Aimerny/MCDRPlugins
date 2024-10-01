@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/Aimerny/MCDRPlugins/compare/whitelist_api-v1.0.0...whitelist_api-v1.0.1) (2024-10-01)
+
+
+### Bug Fixes
+
+* **wlapi:** :bug: add reload opeation after remove ([cc21569](https://github.com/Aimerny/MCDRPlugins/commit/cc21569928087a3e0665c1b96a8f9d9eb8894280))
+
 ## 1.0.0 (2024-09-26)
 
 

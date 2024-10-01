@@ -1,6 +1,6 @@
 {
   "id": "whitelist_api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "WhitelistAPI",
   "description": {
     "en_us": "whitelist common api",
