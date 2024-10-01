@@ -48,6 +48,7 @@ def remove_player(player: str):
     if player not in players:
         raise WhitelistException(f"{player} is not exist")
     __api.remove_player(player)
+    __psi.execute('whitelist reload')
 
 
 def enable_whitelist():
