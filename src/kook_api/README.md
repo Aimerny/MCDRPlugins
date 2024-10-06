@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> 子插件kookin在v1版本后不再依赖此插件,此插件暂停更新,如果你有更好的思路,欢迎pr
+
 # KookAPI
 > 一个连接Kook和MCDR的API插件,通过Kook机器人事件代理服务将Kook服务器(频道)的事件接入MCDR
 
