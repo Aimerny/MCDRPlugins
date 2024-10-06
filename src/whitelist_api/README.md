@@ -39,3 +39,4 @@ def on_load(server, old):
 # 🎾 使用此api的插件集合
 
 1. [Offline Whitelist Reforged](../offline_whitelist_reforged): 简单小巧的离线服白名单插件
+2. [KookIn](../kookin): Kook平台的MC机器人
