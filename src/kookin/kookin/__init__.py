@@ -52,7 +52,6 @@ def on_server_stop(server: PluginServerInterface, server_return_code: int):
     else:
         PluginContext.get().kook_api.send_to_all_channel(
             f'Is **[{PluginContext.get().mcdr_config.server_name}]** crash? Server exit code is {server_return_code}')
-    PluginContext.get().kook_api.stop()
 
 
 def on_user_info(server: PluginServerInterface, info):

@@ -112,7 +112,7 @@ class WhitelistCommandHandler(CommandHandler):
             if player_name is None:
                 return await message.reply('玩家名不能为空')
             try:
-                whitelist_api.add_online_player(player_name)
+                whitelist_api.add_player(player_name)
                 return await message.reply(f'已将*{player_name}*添加到白名单中')
             except WhitelistException:
                 return await message.reply(f'添加失败, 玩家*{player_name}*已在白名单中')
