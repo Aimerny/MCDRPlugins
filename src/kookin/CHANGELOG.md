@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/Aimerny/MCDRPlugins/compare/kookin-v1.0.1...kookin-v1.1.0) (2024-10-07)
+
+
+### Features
+
+* **kookin:** :sparkles: update whitelist_api && whitelist use relative mode ([33586db](https://github.com/Aimerny/MCDRPlugins/commit/33586db218d524e8863f5bdfbe14eb2cb28bc4b0))
+
 ## [1.0.1](https://github.com/Aimerny/MCDRPlugins/compare/kookin-v1.0.0...kookin-v1.0.1) (2024-10-01)
 
 
