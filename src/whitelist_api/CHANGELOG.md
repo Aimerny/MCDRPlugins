@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/Aimerny/MCDRPlugins/compare/whitelist_api-v1.0.1...whitelist_api-v1.1.0) (2024-10-07)
+
+
+### Features
+
+* **wlapi:** :sparkles: add new api: relative add player ([5e7e60c](https://github.com/Aimerny/MCDRPlugins/commit/5e7e60c48c2944b7c530e33ae98df957978a013a))
+
 ## [1.0.1](https://github.com/Aimerny/MCDRPlugins/compare/whitelist_api-v1.0.0...whitelist_api-v1.0.1) (2024-10-01)
 
 
