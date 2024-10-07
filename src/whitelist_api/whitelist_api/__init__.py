@@ -27,6 +27,13 @@ def get_whitelist_names() -> List[str]:
     return [player.name for player in __api.whitelist]
 
 
+def add_player(player: str):
+    if __api.online_mode:
+        add_online_player(player)
+    else:
+        add_offline_player(player)
+
+
 def add_offline_player(player: str):
     players = get_whitelist_names()
     if player in players:
@@ -67,6 +74,11 @@ def on_load(server: PluginServerInterface, prev_module):
 
 def on_unload(server: PluginServerInterface):
     __api.stop_watchdog()
+
+
+def on_server_start(server: PluginServerInterface):
+    mode = __api.refresh_online_mode()
+    server.logger.warning(f'server online mode is: {mode}')
 
 
 def whitelist_api():

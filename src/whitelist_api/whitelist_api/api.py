@@ -43,6 +43,7 @@ class WhitelistApi:
     __watchdog: Observer
     __logger: logging.Logger
     __running: bool
+    __online_mode: bool
 
     @property
     def server_directory(self):
@@ -52,6 +53,10 @@ class WhitelistApi:
     def whitelist(self):
         return self.__whitelist
 
+    @property
+    def online_mode(self):
+        return self.__online_mode
+
     def whitelist_file_path(self):
         return f'{self.__server_path}/whitelist.json'
 
@@ -60,6 +65,7 @@ class WhitelistApi:
         self.__logger = logger
         self.load_whitelist()
         self.__running = False
+        self.refresh_online_mode()
         if watch_enable:
             self.start_watchdog()
 
@@ -105,3 +111,16 @@ class WhitelistApi:
         if self.__running:
             self.__watchdog.stop()
         self.__logger.info('whitelist api watchdog stopped')
+
+    def refresh_online_mode(self) -> bool | None:
+        with open(f'{self.server_directory}/server.properties', mode='r') as props:
+            line = props.readline()
+            while line:
+                # skip '\n'
+                kv = line[:-1].split('=')
+                print(kv)
+                if len(kv) == 2 and kv[0] == 'online-mode':
+                    self.__online_mode = True if kv[1] == 'true' else False
+                    return self.__online_mode
+                line = props.readline()
+        return None

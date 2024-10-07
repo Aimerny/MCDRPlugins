@@ -14,6 +14,7 @@
 - [x] 添加正版玩家白名单
 - [x] 添加离线玩家白名单
 - [x] 移除玩家白名单
+- [x] 根据服务器在线/离线自适应添加白名单
 
 # 📌 依赖
 | python依赖    | 版本     |
@@ -30,6 +31,7 @@ def on_load(server, old):
     whitelist_api.get_whitelist()           # 获取白名单内所有成员
     whitelist_api.get_whitelist_uuids()     # 获取白名单内所有成员的uuid列表
     whitelist_api.get_whitelist_names()     # 获取白名单内所有成员的玩家名
+    whitelist_api.add_player('Aimerny')     # 根据目标server的online-mode自适应添加白名单
     whitelist_api.add_offline_player('Aimerny')      # 添加离线玩家白名单
     whitelist_api.add_online_player('Aimerny')       # 添加正版玩家白名单
     whitelist_api.remove_player('Aimerny')           # 移除玩家白名单
