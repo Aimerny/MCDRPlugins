@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/Aimerny/MCDRPlugins/compare/whitelist_api-v1.1.0...whitelist_api-v1.1.1) (2024-10-12)
+
+
+### Bug Fixes
+
+* **wlapi:** :bug: open `whitelist.json` use u8 encoding ([591eda4](https://github.com/Aimerny/MCDRPlugins/commit/591eda44d4f61bfbbb48d8263aaa6b4f938d240b))
+
 ## [1.1.0](https://github.com/Aimerny/MCDRPlugins/compare/whitelist_api-v1.0.1...whitelist_api-v1.1.0) (2024-10-07)
 
 
