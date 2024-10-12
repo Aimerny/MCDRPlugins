@@ -113,7 +113,7 @@ class WhitelistApi:
         self.__logger.info('whitelist api watchdog stopped')
 
     def refresh_online_mode(self) -> bool | None:
-        with open(f'{self.server_directory}/server.properties', mode='r') as props:
+        with open(f'{self.server_directory}/server.properties', mode='r', encoding='UTF-8') as props:
             line = props.readline()
             while line:
                 # skip '\n'
