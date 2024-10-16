@@ -10,6 +10,6 @@
   "link": "https://github.com/Aimerny/Kookin",
   "dependencies": {
     "online_player_api": "^1.0.0",
-    "whitelist_api": "^1.1.0"
+    "whitelist_api": "^1.2.0"
   }
 }
