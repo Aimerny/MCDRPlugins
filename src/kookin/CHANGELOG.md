@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/Aimerny/MCDRPlugins/compare/kookin-v1.1.0...kookin-v1.1.1) (2024-10-16)
+
+
+### Bug Fixes
+
+* **kookin:** :ambulance: fix online mode whitelist feature ([5f1a47e](https://github.com/Aimerny/MCDRPlugins/commit/5f1a47e64866392916d2786e5a5498b9decb73d9))
+
 ## [1.1.0](https://github.com/Aimerny/MCDRPlugins/compare/kookin-v1.0.1...kookin-v1.1.0) (2024-10-07)
 
 
