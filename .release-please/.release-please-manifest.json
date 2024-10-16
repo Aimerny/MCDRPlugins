@@ -1,7 +1,7 @@
 {
   "src/bili_api_helper": "0.0.0",
   "src/kook_api": "0.2.0",
-  "src/kookin": "1.1.0",
+  "src/kookin": "1.1.1",
   "src/mirror_archive_manager": "0.1.2",
   "src/offline_whitelist_reforged": "2.0.1",
   "src/player_last_play": "1.2.0",
