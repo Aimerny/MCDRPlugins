@@ -118,7 +118,6 @@ class WhitelistApi:
             while line:
                 # skip '\n'
                 kv = line[:-1].split('=')
-                print(kv)
                 if len(kv) == 2 and kv[0] == 'online-mode':
                     self.__online_mode = True if kv[1] == 'true' else False
                     return self.__online_mode

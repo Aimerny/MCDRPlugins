@@ -45,17 +45,26 @@ def add_offline_player(player: str):
 
 def add_online_player(player: str):
     players = get_whitelist_names()
-    if player in players:
-        raise WhitelistException(f"{player} is already exist")
+    if __api.online_mode:
+        if player.upper() in [_player.upper() for _player in players]:
+            raise WhitelistException(f"{player} is already exist")
+    else:
+        if player in players:
+            raise WhitelistException(f"{player} is already exist")
     __psi.execute(f'whitelist add {player}')
 
 
 def remove_player(player: str):
     players = get_whitelist_names()
-    if player not in players:
-        raise WhitelistException(f"{player} is not exist")
-    __api.remove_player(player)
-    __psi.execute('whitelist reload')
+    if __api.online_mode:
+        if player.upper() not in [_player.upper() for _player in players]:
+            raise WhitelistException(f"{player} is not exist")
+        __psi.execute(f'whitelist remove {player}')
+    else:
+        if player not in players:
+            raise WhitelistException(f"{player} is not exist")
+        __api.remove_player(player)
+        __psi.execute('whitelist reload')
 
 
 def enable_whitelist():
