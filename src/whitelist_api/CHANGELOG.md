@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/Aimerny/MCDRPlugins/compare/whitelist_api-v1.1.1...whitelist_api-v1.2.0) (2024-10-16)
+
+
+### Features
+
+* **wlapi:** :sparkles: adapt `add` and `remove` command case ignore ([fc93733](https://github.com/Aimerny/MCDRPlugins/commit/fc9373370caf502bd9a27c677f54520f7ea8f5a5))
+
 ## [1.1.1](https://github.com/Aimerny/MCDRPlugins/compare/whitelist_api-v1.1.0...whitelist_api-v1.1.1) (2024-10-12)
 
 
