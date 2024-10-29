@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/Aimerny/MCDRPlugins/compare/whitelist_api-v1.2.0...whitelist_api-v1.3.0) (2024-10-29)
+
+
+### Features
+
+* **wlapi:** :sparkles: remove player add force_offline option ([7d10ab5](https://github.com/Aimerny/MCDRPlugins/commit/7d10ab5c07351358219a2f21fd97f81a82a5c63d))
+
 ## [1.2.0](https://github.com/Aimerny/MCDRPlugins/compare/whitelist_api-v1.1.1...whitelist_api-v1.2.0) (2024-10-16)
 
 
