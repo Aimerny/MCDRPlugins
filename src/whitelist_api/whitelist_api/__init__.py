@@ -54,9 +54,9 @@ def add_online_player(player: str):
     __psi.execute(f'whitelist add {player}')
 
 
-def remove_player(player: str):
+def remove_player(player: str, force_offline: bool = False):
     players = get_whitelist_names()
-    if __api.online_mode:
+    if __api.online_mode and not force_offline:
         if player.upper() not in [_player.upper() for _player in players]:
             raise WhitelistException(f"{player} is not exist")
         __psi.execute(f'whitelist remove {player}')
