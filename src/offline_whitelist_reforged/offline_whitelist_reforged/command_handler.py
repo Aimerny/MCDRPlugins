@@ -77,7 +77,7 @@ class CommandHandler:
         else:
             player = context.get('rm_player')
             try:
-                self.__whitelist_api.remove_player(player)
+                self.__whitelist_api.remove_player(player, True)
                 source.reply(replace_code(f'&a已经移除{player}的白名单'))
             except WhitelistException:
                 source.reply(replace_code(f'&e玩家{player}不在白名单中'))
