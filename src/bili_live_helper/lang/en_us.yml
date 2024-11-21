@@ -9,6 +9,7 @@ bili_live_helper:
     listener_send_disable: "服务器未开启发送消息功能"
     listener_closed: "弹幕姬未开启,请先开启弹幕姬"
     send_msg_failed_reason: "发送消息失败,请稍后再试"
+    not_admin_error: "你不是管理员,无权调用此指令"
   reply_message:
     run_listener: "已开启直播间[{}]的弹幕姬"
     kill_listener: "[{}]已停止弹幕姬"

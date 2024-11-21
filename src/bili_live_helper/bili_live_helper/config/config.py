@@ -1,4 +1,4 @@
-from typing import Type, Optional
+from typing import Type, Optional, List
 
 from mcdreforged.api.all import *
 
@@ -17,3 +17,6 @@ class Config(Serializable):
     console_output: bool = True
     account: AccountConfig = AccountConfig()
     send: bool = True
+    admin_from_mcdr = True
+    admins: List[str] = []
+

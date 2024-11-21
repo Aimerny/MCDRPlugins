@@ -133,7 +133,19 @@ class CommandManager:
             self.bili_manager.submit(player, OptionEnum.SEND_MSG, message)
 
     def cmd_admin(self, source: CommandSource, context: CommandContext):
-        pass
+        if isinstance(source, PlayerCommandSource):
+            player = source.player
+            if not self.___is_admin(player):
+                return reply_error_message(source, tr('raise_message.not_admin_error'))
+        option_type = context.get('type')
+        option_content = context.get('option')
+        reply_message(source, f'{option_type}:{option_content}')
+
+    def ___is_admin(self, player: str) -> bool:
+        if self.plg_ctx.mcdr_config.admin_from_mcdr and self.plg_ctx.mcdr_server.get_permission_level(player) > 3:
+            return True
+        if player in self.plg_ctx.mcdr_config.admins:
+            return True
 
     def register_command(self):
         builder = SimpleCommandBuilder()
@@ -146,13 +158,13 @@ class CommandManager:
         builder.command("!!blh query <player>", self.cmd_player_live_info)
         builder.command("!!blh s <send_msg>", self.cmd_send_msg)
         builder.command("!!blh send <send_msg>", self.cmd_send_msg)
-        # builder.command("!!blh admin <type> <option>", self.cmd_admin)
+        builder.command("!!blh admin <type> <option>", self.cmd_admin)
 
         builder.arg("rid", Number)
         builder.arg("player", Text)
         builder.arg("send_msg", GreedyText)
-        # builder.arg("type", Text)
-        # builder.arg("option", Text)
+        builder.arg("type", Text)
+        builder.arg("option", Text)
         builder.register(server=self.plg_ctx.mcdr_server)
 
     @staticmethod

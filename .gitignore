@@ -162,6 +162,7 @@ cython_debug/
 .idea/
 node_modules/
 dependency/
+.Ds_Store
 
 # ============= Plugin Dependency ==============
 prime_backup/
