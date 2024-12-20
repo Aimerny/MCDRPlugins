@@ -1,6 +1,6 @@
 import json
 from enum import Enum
-from typing import Optional
+from typing import Optional, Dict, Any
 
 from mcdreforged.api.all import *
 from mirror_archive_manager.util.mcdr_util import reply_message, tr
@@ -19,7 +19,7 @@ class OperateType(Enum):
 
 
 def request_mirror(source: CommandSource, mirror: MirrorServerConfig, op_type: OperateType,
-                   data: dict | None = None) -> Optional[any]:
+                   data: Optional[Dict] = None) -> Optional[Any]:
     try:
         url = f'http://{mirror.host}:{mirror.port}/{op_type}'
         resp = requests.post(url=url, timeout=3, data=json.dumps(data))

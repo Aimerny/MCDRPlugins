@@ -83,7 +83,7 @@ class CommandManager:
         else:
             return []
 
-    def __parse_mirror_config(self, source: CommandSource, context: dict) -> MirrorServerConfig | None:
+    def __parse_mirror_config(self, source: CommandSource, context: dict) -> Optional[MirrorServerConfig]:
         mirror_name = context.get('server')
         if len(self.config.mirrors) == 0:
             reply_message(source, tr('no_mirror_found').set_color(RColor.dark_red))
