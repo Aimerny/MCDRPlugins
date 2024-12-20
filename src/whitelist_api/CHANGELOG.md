@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/Aimerny/MCDRPlugins/compare/whitelist_api-v1.3.0...whitelist_api-v1.3.1) (2024-12-20)
+
+
+### Bug Fixes
+
+* **whapi:** fix file path problem for windows platform ([462012f](https://github.com/Aimerny/MCDRPlugins/commit/462012f81a446ab1a7493a631dfc5e8762280594))
+
 ## [1.3.0](https://github.com/Aimerny/MCDRPlugins/compare/whitelist_api-v1.2.0...whitelist_api-v1.3.0) (2024-10-29)
 
 
