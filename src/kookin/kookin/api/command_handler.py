@@ -45,7 +45,7 @@ class CommandHandler:
 
 
 class HelpCommandHandler(CommandHandler):
-    async def handle(self, message: Message, sub_command: Union[str | CommandEnum] = None):
+    async def handle(self, message: Message, sub_command: Union[str, CommandEnum] = None):
         if sub_command is None or sub_command == '':
             return await message.reply(help_msg.root_help_msg)
         # 传入字符串就转成枚举

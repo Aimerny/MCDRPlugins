@@ -1,7 +1,7 @@
 import asyncio
 import threading
 from enum import Enum
-from typing import Dict
+from typing import Dict, Union
 from mcdreforged.api.all import *
 from asyncio import AbstractEventLoop, Queue
 from threading import Event
@@ -111,7 +111,7 @@ class BiliManager:
             return
         self.__logger.error(f'bili-live-listener for {player} not found')
 
-    def submit(self, player: str, option: str | OptionEnum, *args):
+    def submit(self, player: str, option: Union[str, OptionEnum], *args):
         if isinstance(option, str):
             try:
                 option_enum = OptionEnum(option.upper())
