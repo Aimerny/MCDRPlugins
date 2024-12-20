@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/Aimerny/MCDRPlugins/compare/kookin-v1.1.1...kookin-v1.1.2) (2024-12-20)
+
+
+### Bug Fixes
+
+* adapt plugin for a version lower than python 3.10 ([1f76563](https://github.com/Aimerny/MCDRPlugins/commit/1f7656389ed54a89e52332dc1ddfa3d59cec3108))
+
 ## [1.1.1](https://github.com/Aimerny/MCDRPlugins/compare/kookin-v1.1.0...kookin-v1.1.1) (2024-10-16)
 
 
