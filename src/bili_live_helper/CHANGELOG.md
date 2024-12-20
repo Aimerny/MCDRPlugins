@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.2](https://github.com/Aimerny/MCDRPlugins/compare/bili_live_helper-v1.3.1...bili_live_helper-v1.3.2) (2024-12-20)
+
+
+### Bug Fixes
+
+* adapt plugin for a version lower than python 3.10 ([1f76563](https://github.com/Aimerny/MCDRPlugins/commit/1f7656389ed54a89e52332dc1ddfa3d59cec3108))
+
 ## [1.3.1](https://github.com/Aimerny/MCDRPlugins/compare/bili_live_helper-v1.3.0...bili_live_helper-v1.3.1) (2024-09-24)
 
 
