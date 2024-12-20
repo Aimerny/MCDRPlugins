@@ -1,9 +1,11 @@
 import json
 import logging
+from pathlib import Path
 from json import JSONDecodeError
-from typing import List
+from typing import List, Optional, Union
 
 watch_enable: False
+_default_server_properties = 'server.properties'
 
 try:
     from watchdog.observers import Observer
@@ -31,14 +33,14 @@ class FileEventHandler(FileSystemEventHandler):
         super().__init__()
         self.__api = whitelist_api
 
-    def on_modified(self, event: DirModifiedEvent | FileModifiedEvent) -> None:
+    def on_modified(self, event: Union[DirModifiedEvent, FileModifiedEvent]) -> None:
         # compare relative path with absolute path
         if event.src_path.endswith(self.__api.whitelist_file_path()):
             self.__api.load_whitelist()
 
 
 class WhitelistApi:
-    __server_path: str
+    __server_path: Path
     __whitelist: List[PlayerInfo]
     __watchdog: Observer
     __logger: logging.Logger
@@ -61,7 +63,7 @@ class WhitelistApi:
         return f'{self.__server_path}/whitelist.json'
 
     def __init__(self, file_path: str, logger: logging.Logger = logging.getLogger("whitelist_api")):
-        self.__server_path = file_path
+        self.__server_path = Path(file_path)
         self.__logger = logger
         self.load_whitelist()
         self.__running = False
@@ -112,11 +114,11 @@ class WhitelistApi:
             self.__watchdog.stop()
         self.__logger.info('whitelist api watchdog stopped')
 
-    def refresh_online_mode(self) -> bool | None:
-        with open(f'{self.server_directory}/server.properties', mode='r', encoding='UTF-8') as props:
+    def refresh_online_mode(self) -> Optional[bool]:
+        with open(self.server_directory / _default_server_properties, mode='r', encoding='UTF-8') as props:
             line = props.readline()
             while line:
-                # skip '\n'
+                # trim '\n'
                 kv = line[:-1].split('=')
                 if len(kv) == 2 and kv[0] == 'online-mode':
                     self.__online_mode = True if kv[1] == 'true' else False
