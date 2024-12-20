@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/Aimerny/MCDRPlugins/compare/mirror_archive_manager-v0.1.2...mirror_archive_manager-v0.1.3) (2024-12-20)
+
+
+### Bug Fixes
+
+* **mam:** remove '|' grammar using, adapt to lower version than python 3.10 ([299a2ea](https://github.com/Aimerny/MCDRPlugins/commit/299a2ea9274957ba273e8aee0f2a85859b80c986))
+
 ## [0.1.2](https://github.com/Aimerny/MCDRPlugins/compare/mirror_archive_manager-v0.1.1...mirror_archive_manager-v0.1.2) (2024-09-29)
 
 
