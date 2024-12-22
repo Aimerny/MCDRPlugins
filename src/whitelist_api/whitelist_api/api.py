@@ -35,7 +35,8 @@ class FileEventHandler(FileSystemEventHandler):
 
     def on_modified(self, event: Union[DirModifiedEvent, FileModifiedEvent]) -> None:
         # compare relative path with absolute path
-        if event.src_path.endswith(self.__api.whitelist_file_path()):
+        report_path = Path(event.src_path).as_posix()
+        if report_path.endswith(self.__api.whitelist_file_path()):
             self.__api.load_whitelist()
 
 
