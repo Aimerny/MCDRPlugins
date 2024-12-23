@@ -7,9 +7,7 @@ title: Bili Live Helper
 
 # BiliLiveHelper | B站直播助手-弹幕姬
 
-<Alert type="error">
 此插件仅用于学习交流，请勿用于违法犯罪或其他不良用途。
-</Alert>
 
 一个用于将 B 站直播弹幕同步到 MC 聊天栏的 MCDR 插件。
 
@@ -81,9 +79,7 @@ title: Bili Live Helper
 | account.ac_time_value | 登录凭证 | string | - |
 | send | 是否允许发送弹幕 | boolean | true |
 
-<Alert type="info">
 B 站账号凭证获取方法请参考：[获取 Credential 类所需信息](https://nemo2011.github.io/bilibili-api/#/get-credential)
-</Alert>
 
 ## 命令
 
@@ -142,12 +138,10 @@ B 站账号凭证获取方法请参考：[获取 Credential 类所需信息](htt
 
 ## 注意事项
 
-<Alert type="warning">
 1. 建议使用小号作为弹幕姬账号
 2. 账号凭证通常不会经常过期
 3. 为避免影响性能，建议适度使用
 4. 确保账号凭证的安全性
-</Alert>
 
 ## 更新日志
 
