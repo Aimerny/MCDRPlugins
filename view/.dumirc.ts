@@ -8,7 +8,7 @@ export default defineConfig({
   themeConfig: {
     name: 'AMPR',
     lastUpdated: true,
-    logo: '/icon.svg',
+    logo: 'https://aimerny.github.io/MCDRPlugins/icon.svg',
     prefersColor: { default: 'auto' },
     footer: 'Copyright © 2024 | Powered by <a href="https://github.com/Aimerny">Aimerny</a><br/>Thanks for dumi',
     socialLinks: {
@@ -22,6 +22,5 @@ export default defineConfig({
   alias: {
     "plugins": "../src/",
     "root":"../",
-
   }
 });

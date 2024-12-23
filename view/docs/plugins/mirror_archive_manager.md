@@ -1,63 +1,57 @@
 ---
 title: MirrorArchiveManager
 ---
-# MirrorArchiveManager
+# Mirror Archive Manager
 
-一个基于Prime_Backup插件的支持管理多个镜像服务器的插件,支持存档同步,启停控制
+一个基于 Prime Backup 插件的多镜像服务器管理插件，支持存档同步和启停控制。
 
-# 功能
-> 该插件不会帮助你自动配置镜像服,请确保你已经配好了可以正常游玩的镜像服再使用本插件.
+## 功能特性
 
-**MirrorArchiveManager**插件借助[Prime Backup]()插件(以下简称"pb")强大的存档备份及回档机制,实现了以下功能
-1. 支持将主服选择pb的存档直接回档到镜像服
-2. 主服支持配置多个镜像服
-3. 主服可以通过指令直接控制镜像服的启停
-
-## 帮助指令
-
-```
-========== Mirror Archive Manager ==========
-!!mam start <server_name> -- 启动镜像服 <server_name>
-!!mam stop <server_name> -- 停止镜像服 <server_name>
-!!mam sync <server_name> <id> -- 将 prime_backup 中的编号#<id>的存档同步到<server_name>
-================ by Aimerny ================
-```
+- 支持将主服的 Prime Backup 存档直接回档到镜像服
+- 支持配置多个镜像服务器
+- 支持通过指令控制镜像服的启停
+- 自动化的存档同步机制
 
 ## 依赖
 
-| python依赖项 | 版本       |
-|-----------|----------|
-| requests  | ^2.31.0  |
-| fastapi   | ^0.111.1 |
+### Python 依赖
+| 依赖项 | 版本要求 |
+|-------|---------|
+| requests | ^2.31.0 |
+| fastapi | ^0.111.1 |
 
-| mcdr依赖项      | 版本      |
-|--------------|---------|
-| mcdreforged  | ^2.12.x |
-| prime_backup | ^1.7.4  |
+### MCDR 依赖
+| 依赖项 | 版本要求 |
+|-------|---------|
+| mcdreforged | ^2.12.x |
+| prime_backup | ^1.7.4 |
 
-# 使用说明
-在MirrorArchiveManager插件(以下简称`mam`)的视角里,服务器有两个角色,分别为`main`和`mirror`.
-如果你需要将`main`服务器的pb备份同步到`mirror`服务器,则需要进行一些小小的配置
+## 安装
 
-## 使用前配置
+1. 确保已安装 [Prime Backup](https://github.com/TISUnion/PrimeBackup)
+2. 下载插件
+3. 将插件放入 MCDR 的 plugins 目录
+4. 安装依赖：
+   ```bash
+   pip install requests>=2.31.0 fastapi>=0.111.1
+   ```
+5. 配置主服和镜像服
+6. 重载 MCDR 或重启服务器
 
-### main服务器配置(未展示的配置无需配置)
-```json5
+## 配置说明
+
+### 主服配置
+
+```json
 {
-    // 需要设置为true
     "main": true,
-    // 镜像服配置,可配置多个
     "mirrors": [
         {
-            // 镜像服务器名
             "name": "mirror",
-            // 镜像服务器地址
             "host": "127.0.0.1",
-            // 镜像服务器配置的端口(如下配置中设置了30076)
             "port": 30076
         }
     ],
-    // 指令的MCDR权限等级
     "perms": {
         "start": 3,
         "stop": 3,
@@ -66,53 +60,81 @@ title: MirrorArchiveManager
 }
 ```
 
-### mirror服务器配置(未展示的配置无需配置)
-```json5
+### 镜像服配置
+
+```json
 {
-    // 需要设置为false
     "main": false,
-    // 主服的相对路径或绝对路径
     "main_path": "../main",
-    // 控制端口
     "port": 30076
 }
 ```
-### 启动主服+镜像服
-启动后你会在主服看到如下日志:
-```
-[MCDR] [03:01:41] [TaskExecutor/INFO] [mirror_archive_manager]: MAM running with main role!
-[MCDR] [03:01:41] [TaskExecutor/INFO] [mirror_archive_manager]: MirrorArchiveManager initialization completed!
-```
-在镜像服会看到如下日志:
-```
-[MCDR] [03:07:04] [TaskExecutor/INFO] [mirror_archive_manager]: MAM running with mirror role!
-[MCDR] [03:07:04] [TaskExecutor/INFO] [mirror_archive_manager]: mirror http server started...
-[MCDR] [03:07:04] [TaskExecutor/INFO] [mirror_archive_manager]: mirror process...
-[MCDR] [03:07:04] [TaskExecutor/INFO] [mirror_archive_manager]: MirrorArchiveManager initialization completed!
-```
-此时插件便加载成功了.
 
-## 启停镜像服
->[!IMPORTANT]
-> 虽然该插件具有启停镜像服功能,但是要求镜像服处于MCDR进程启动的状态.换而言之,只有通过mam停止的镜像服才能再通过mam启动
-### 停止
-`!!mam stop <server_name>`: `server_name`非必填,如果没填会用第一个已配置的镜像服
-### 启动
-`!!mam start <server_name>`: `server_name`非必填,如果没填会用第一个已配置的镜像服
+### 配置项说明
 
-## 指定备份存档同步到镜像服
-`!!mam sync <id> <server_name>`
-1. `server_name`非必填,如果没填会用第一个已配置的镜像服
-2. `id`为pb备份id,**必填**
+| 配置项 | 说明 | 示例 | 必填 |
+|-------|------|------|------|
+| main | 是否为主服角色 | true | 是 |
+| mirrors | 镜像服配置列表 | [] | 主服必填 |
+| mirrors[].name | 镜像服名称 | "mirror" | 是 |
+| mirrors[].host | 镜像服地址 | "127.0.0.1" | 是 |
+| mirrors[].port | 镜像服端口 | 30076 | 是 |
+| main_path | 主服路径 | "../main" | 镜像服必填 |
+| port | 镜像服端口 | 30076 | 镜像服必填 |
+| perms | 指令权限等级 | {"start": 3} | 主服必填 |
 
-# 配置详解
-| 配置             | 说明                              | 示例                              |
-|----------------|---------------------------------|---------------------------------|
-| main           | 是否是主服角色,必填                      | true                            |
-| mirrors        | 镜像服配置,主服必填                      | []                              |
-| mirrors[].name | 主服操作镜像时的名称,必填且唯一                | mirror                          |
-| mirrors[].host | 主服连接镜像时的地址,必填                   | 127.0.0.1                       |
-| mirrors[].port | 主服连接镜像时访问端口,必填                  | 30076                           |
-| main_path      | 镜像服相对主服的文件夹的相对路径或者主服的绝对路径,镜像服必填 | ../main 或者 /Users/aim/mcdr/main |
-| port           | 镜像服被主服访问的端口,镜像服必填               | 30076                           |
-| perms          | 指令操作权限等级,使用MCDR的权限等级,主服必填       | 3                               |
+## 命令
+
+- `!!mam start <server_name>` - 启动指定镜像服
+- `!!mam stop <server_name>` - 停止指定镜像服
+- `!!mam sync <server_name> <id>` - 将指定备份同步到镜像服
+
+> 注：`server_name` 参数可选，不填时使用第一个配置的镜像服
+
+## 使用示例
+
+1. 启动镜像服：
+   ```
+   !!mam start mirror
+   ```
+
+2. 同步存档：
+   ```
+   !!mam sync mirror 123  # 将备份 #123 同步到 mirror 服务器
+   ```
+
+3. 停止镜像服：
+   ```
+   !!mam stop mirror
+   ```
+
+## 注意事项
+
+1. 使用前请确保已正确配置镜像服务器
+2. 镜像服必须处于 MCDR 进程启动的状态
+3. 只有通过 MAM 停止的镜像服才能再通过 MAM 启动
+4. 同步存档时需要指定有效的 Prime Backup 备份 ID
+
+## 启动验证
+
+### 主服日志
+```
+[MCDR] [INFO] [mirror_archive_manager]: MAM running with main role!
+[MCDR] [INFO] [mirror_archive_manager]: MirrorArchiveManager initialization completed!
+```
+
+### 镜像服日志
+```
+[MCDR] [INFO] [mirror_archive_manager]: MAM running with mirror role!
+[MCDR] [INFO] [mirror_archive_manager]: mirror http server started...
+[MCDR] [INFO] [mirror_archive_manager]: mirror process...
+[MCDR] [INFO] [mirror_archive_manager]: MirrorArchiveManager initialization completed!
+```
+
+## 更新日志
+
+### v1.0.0
+- 初始版本发布
+- 支持多镜像服管理
+- 支持存档同步
+- 支持远程启停控制
