@@ -6,6 +6,7 @@ from typing import List, Optional, Union
 
 watch_enable: False
 _default_server_properties = 'server.properties'
+_default_whitelist_json = 'whitelist.json'
 
 try:
     from watchdog.observers import Observer
@@ -42,7 +43,6 @@ class FileEventHandler(FileSystemEventHandler):
 class WhitelistApi:
     __server_path: Path
     __whitelist: List[PlayerInfo]
-    __watchdog: Observer
     __logger: logging.Logger
     __running: bool
     __online_mode: bool
@@ -59,8 +59,8 @@ class WhitelistApi:
     def online_mode(self):
         return self.__online_mode
 
-    def whitelist_file_path(self):
-        return f'{self.__server_path}/whitelist.json'
+    def whitelist_file_path(self) -> Path:
+        return Path(self.__server_path) / _default_whitelist_json
 
     def __init__(self, file_path: str, logger: logging.Logger = logging.getLogger("whitelist_api")):
         self.__server_path = Path(file_path)
@@ -88,9 +88,11 @@ class WhitelistApi:
     def save_whitelist(self):
         whitelist_json = []
         for player_info in self.__whitelist:
-            whitelist_json.append({'uuid': player_info.uuid, 'name': player_info.name})
+            whitelist_json.append(
+                {'uuid': player_info.uuid, 'name': player_info.name})
         with open(self.whitelist_file_path(), 'w', encoding='UTF-8') as f:
-            f.write(json.dumps(whitelist_json, indent=2, separators=(',', ':'), ensure_ascii=False))
+            f.write(json.dumps(whitelist_json, indent=2,
+                    separators=(',', ':'), ensure_ascii=False))
 
     def remove_player(self, player: str) -> bool:
         for index, p in enumerate(self.__whitelist):
@@ -105,7 +107,8 @@ class WhitelistApi:
             return
         handler = FileEventHandler(self)
         self.__watchdog = Observer()
-        self.__watchdog.schedule(handler, path=self.__server_path, recursive=False)
+        self.__watchdog.schedule(
+            handler, path=self.__server_path, recursive=False)
         self.__watchdog.start()
         self.__running = True
 
