@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.3](https://github.com/Aimerny/MCDRPlugins/compare/whitelist_api-v1.3.2...whitelist_api-v1.3.3) (2024-12-23)
+
+
+### Bug Fixes
+
+* **whapi:** fix path arg error ([d892bb4](https://github.com/Aimerny/MCDRPlugins/commit/d892bb47e6b7669e60be7fa29149bb63a1053d5c))
+
 ## [1.3.2](https://github.com/Aimerny/MCDRPlugins/compare/whitelist_api-v1.3.1...whitelist_api-v1.3.2) (2024-12-23)
 
 
