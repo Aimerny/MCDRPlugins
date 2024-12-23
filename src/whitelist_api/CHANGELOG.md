@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.2](https://github.com/Aimerny/MCDRPlugins/compare/whitelist_api-v1.3.1...whitelist_api-v1.3.2) (2024-12-23)
+
+
+### Bug Fixes
+
+* **whapi:** Correctly handle window path in on_modified ([#80](https://github.com/Aimerny/MCDRPlugins/issues/80)) ([0ea801e](https://github.com/Aimerny/MCDRPlugins/commit/0ea801e169064f6b0f5a682434a4de56597aa21e))
+* **whapi:** improve type annotations and code formatting ([10fd9ee](https://github.com/Aimerny/MCDRPlugins/commit/10fd9ee34c285ced2e78bf3867b92ad6f86fb234))
+
 ## [1.3.1](https://github.com/Aimerny/MCDRPlugins/compare/whitelist_api-v1.3.0...whitelist_api-v1.3.1) (2024-12-20)
 
 
