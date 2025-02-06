@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/Aimerny/MCDRPlugins/compare/mirror_archive_manager-v0.1.3...mirror_archive_manager-v0.1.4) (2025-02-06)
+
+
+### Bug Fixes
+
+* fix link for all plugins meta ([c313e6f](https://github.com/Aimerny/MCDRPlugins/commit/c313e6f1b92db0c76a200c4c25956adfb4c4c933))
+
 ## [0.1.3](https://github.com/Aimerny/MCDRPlugins/compare/mirror_archive_manager-v0.1.2...mirror_archive_manager-v0.1.3) (2024-12-20)
 
 

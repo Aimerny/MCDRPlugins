@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.3](https://github.com/Aimerny/MCDRPlugins/compare/bili_live_helper-v1.3.2...bili_live_helper-v1.3.3) (2025-02-06)
+
+
+### Bug Fixes
+
+* fix link for all plugins meta ([c313e6f](https://github.com/Aimerny/MCDRPlugins/commit/c313e6f1b92db0c76a200c4c25956adfb4c4c933))
+
 ## [1.3.2](https://github.com/Aimerny/MCDRPlugins/compare/bili_live_helper-v1.3.1...bili_live_helper-v1.3.2) (2024-12-20)
 
 
