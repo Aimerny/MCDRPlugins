@@ -5,6 +5,6 @@
   "src/mirror_archive_manager": "0.1.4",
   "src/offline_whitelist_reforged": "2.0.2",
   "src/player_last_play": "1.2.1",
-  "src/bili_live_helper": "1.3.2",
+  "src/bili_live_helper": "1.3.3",
   "src/whitelist_api": "1.3.4"
 }
