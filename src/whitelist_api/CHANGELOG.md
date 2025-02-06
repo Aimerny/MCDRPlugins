@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.4](https://github.com/Aimerny/MCDRPlugins/compare/whitelist_api-v1.3.3...whitelist_api-v1.3.4) (2025-02-06)
+
+
+### Bug Fixes
+
+* fix link for all plugins meta ([c313e6f](https://github.com/Aimerny/MCDRPlugins/commit/c313e6f1b92db0c76a200c4c25956adfb4c4c933))
+
 ## [1.3.3](https://github.com/Aimerny/MCDRPlugins/compare/whitelist_api-v1.3.2...whitelist_api-v1.3.3) (2024-12-23)
 
 
