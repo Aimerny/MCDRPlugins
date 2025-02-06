@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.3](https://github.com/Aimerny/MCDRPlugins/compare/offline_whitelist_reforged-v2.0.2...offline_whitelist_reforged-v2.0.3) (2025-02-06)
+
+
+### Bug Fixes
+
+* fix link for all plugins meta ([c313e6f](https://github.com/Aimerny/MCDRPlugins/commit/c313e6f1b92db0c76a200c4c25956adfb4c4c933))
+
 ## [2.0.2](https://github.com/Aimerny/MCDRPlugins/compare/offline_whitelist_reforged-v2.0.1...offline_whitelist_reforged-v2.0.2) (2024-10-29)
 
 
