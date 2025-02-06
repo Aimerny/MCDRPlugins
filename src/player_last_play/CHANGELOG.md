@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/Aimerny/MCDRPlugins/compare/player_last_play-v1.2.0...player_last_play-v1.2.1) (2025-02-06)
+
+
+### Bug Fixes
+
+* fix link for all plugins meta ([c313e6f](https://github.com/Aimerny/MCDRPlugins/commit/c313e6f1b92db0c76a200c4c25956adfb4c4c933))
+
 ## [1.2.0](https://github.com/Aimerny/MCDRPlugins/compare/player_last_play-v1.1.3...player_last_play-v1.2.0) (2024-08-30)
 
 
