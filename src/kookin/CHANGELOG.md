@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.3](https://github.com/Aimerny/MCDRPlugins/compare/kookin-v1.1.2...kookin-v1.1.3) (2025-02-06)
+
+
+### Bug Fixes
+
+* fix link for all plugins meta ([c313e6f](https://github.com/Aimerny/MCDRPlugins/commit/c313e6f1b92db0c76a200c4c25956adfb4c4c933))
+
 ## [1.1.2](https://github.com/Aimerny/MCDRPlugins/compare/kookin-v1.1.1...kookin-v1.1.2) (2024-12-20)
 
 
