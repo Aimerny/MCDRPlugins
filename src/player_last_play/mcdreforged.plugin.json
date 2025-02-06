@@ -1,6 +1,6 @@
 {
   "id": "player_last_play",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "name": "PlayerLastPlay",
   "description": {
     "en_us": "Record player lastime left the server",
