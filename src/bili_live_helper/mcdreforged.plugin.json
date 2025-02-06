@@ -9,13 +9,12 @@
   "author": [
     "Aimerny"
   ],
-  "link": "https://github.com/Aimerny/BiliLiveHelper",
+  "link": "https://github.com/Aimerny/MCDRPlugins/tree/main/src/bili_live_helper",
   "dependencies": {
     "mcdreforged": ">=2.12.0"
   },
   "entrypoint": "bili_live_helper.entrance",
   "resources": [
-    "lang",
-    "LICENSE"
+    "lang"
   ]
 }

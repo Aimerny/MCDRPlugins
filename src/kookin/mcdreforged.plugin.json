@@ -7,7 +7,7 @@
     "zh_cn": "一个使用KookAPI对接Kook机器人的MCDR插件"
   },
   "author": "Aimerny",
-  "link": "https://github.com/Aimerny/Kookin",
+  "link": "https://github.com/Aimerny/MCDRPlugins/tree/main/src/kookin",
   "dependencies": {
     "online_player_api": "^1.0.0",
     "whitelist_api": "^1.2.0"

@@ -9,7 +9,7 @@
   "author": [
     "Aimerny"
   ],
-  "link": "https://github.com/Aimerny/OfflineWhitelistReforged",
+  "link": "https://github.com/Aimerny/MCDRPlugins/tree/main/src/whitelist_api",
   "dependencies": {
     "mcdreforged": "^2.6.0"
   }
