@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/Aimerny/MCDRPlugins/compare/whitelist_api-v1.3.4...whitelist_api-v1.4.0) (2025-06-09)
+
+
+### Features
+
+* **whitelist_api:** add floodgate player whitelist support ([6211465](https://github.com/Aimerny/MCDRPlugins/commit/62114659bc87292dd588a9afbbc66890d897c857)), closes [#98](https://github.com/Aimerny/MCDRPlugins/issues/98)
+
 ## [1.3.4](https://github.com/Aimerny/MCDRPlugins/compare/whitelist_api-v1.3.3...whitelist_api-v1.3.4) (2025-02-06)
 
 
