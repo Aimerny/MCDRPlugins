@@ -40,7 +40,7 @@ class CommandManager:
                 .append(RText('!!plp help', color=RColor.green).c(RAction.run_command, '!!plp help'), ' - ', RText('显示帮助信息', color=RColor.red), '\n')
                 .append(RText('!!plp list [index]', color=RColor.green).c(RAction.suggest_command, '!!plp list '), ' - ', RText('显示玩家列表, index代表页数', color=RColor.red), '\n')
                 .append(RText('!!plp get <player>', color=RColor.green).c(RAction.suggest_command, '!!plp get '), '-', RText('获取玩家的最后游玩时间', color=RColor.red), '\n')
-                .append(RText('!!plp clean <player>', color=RColor.green).c(RAction.suggest_command, '!!plp clean '), '-', RText('清楚玩家的游玩时间信息', color=RColor.red), '\n')
+                .append(RText('!!plp clean <player>', color=RColor.green).c(RAction.suggest_command, '!!plp clean '), '-', RText('清除玩家的游玩时间信息', color=RColor.red), '\n')
                 .append('-----------------------------------')
         )
         source.reply(help_msg)
