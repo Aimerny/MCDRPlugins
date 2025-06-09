@@ -31,14 +31,19 @@ def on_load(server, old):
     whitelist_api.get_whitelist()           # 获取白名单内所有成员
     whitelist_api.get_whitelist_uuids()     # 获取白名单内所有成员的uuid列表
     whitelist_api.get_whitelist_names()     # 获取白名单内所有成员的玩家名
-    whitelist_api.add_player('Aimerny')     # 根据目标server的online-mode自适应添加白名单
-    whitelist_api.add_offline_player('Aimerny')      # 添加离线玩家白名单
-    whitelist_api.add_online_player('Aimerny')       # 添加正版玩家白名单
+    whitelist_api.add_player('Aimerny')     # 根据目标server的online-mode自适应添加白名单(仅限Java版)
+    whitelist_api.add_offline_player('Aimerny')      # 添加离线玩家白名单(仅限Java版)
+    whitelist_api.add_online_player('Aimerny')       # 添加正版玩家白名单(仅限Java版)
     whitelist_api.remove_player('Aimerny')           # 移除玩家白名单
     whitelist_api.enable_whitelist()        # 开启服务器白名单功能
     whitelist_api.disable_whitelist()       # 关闭服务器白名单功能
+
+    # 如果需要为通过floodgate加入的玩家添加白名单
+    whitelist_api.add_floodgate_player('Aimerny')
+    whitelist_api.add_floodgate_player('Aimerny', '#')
 ```
 # 🎾 使用此api的插件集合
 
 1. [Offline Whitelist Reforged](../offline_whitelist_reforged): 简单小巧的离线服白名单插件
 2. [KookIn](../kookin): Kook平台的MC机器人
+3. [GUGUBot](https://github.com/LoosePrince/PF-GUGUBot): GUGUBot插件
