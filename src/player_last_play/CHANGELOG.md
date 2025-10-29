@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/Aimerny/MCDRPlugins/compare/player_last_play-v1.2.2...player_last_play-v1.3.0) (2025-10-29)
+
+
+### Features
+
+* **plp:** support recording online time ([3a6a280](https://github.com/Aimerny/MCDRPlugins/commit/3a6a2803d98fcd576c570fd0c03883eaebfb76ed))
+
 ## [1.2.2](https://github.com/Aimerny/MCDRPlugins/compare/player_last_play-v1.2.1...player_last_play-v1.2.2) (2025-04-23)
 
 
