@@ -17,4 +17,10 @@ def on_load(server: PluginServerInterface, old):
 
 
 def on_player_left(server: PluginServerInterface, player: str):
-    command_manager.update_player_time(player)
+    if command_manager is not None:
+        command_manager.update_player_time(player)
+
+
+def on_player_joined(server: PluginServerInterface, player: str, info):
+    if command_manager is not None:
+        command_manager.mark_player_joined(player)

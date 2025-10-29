@@ -168,3 +168,4 @@ dependency/
 prime_backup/
 test/
 local_sync.sh
+AGENTS.md

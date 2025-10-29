@@ -2,11 +2,11 @@ import json
 import re
 from datetime import datetime
 from pathlib import Path
-from typing import List, Dict, Optional
+from typing import List, Dict
 
 from mcdreforged.api.all import PluginServerInterface
 
-from player_last_play.models import PlayerInfo
+from player_last_play.models import PlayerInfo, PlayerRecord
 from player_last_play.config import Config
 
 
@@ -32,33 +32,48 @@ def get_online_players(server: PluginServerInterface) -> List[str]:
     return online_player_api.get_player_list()
 
 
-def load_player_data(server: PluginServerInterface) -> Dict[str, datetime]:
+def load_player_data(server: PluginServerInterface) -> Dict[str, PlayerRecord]:
     """加载玩家数据"""
     data = server.load_config_simple(
         'data.json',
         default_config={'player_list': {}},
         echo_in_console=True
     )['player_list']
-    return {
-        player: datetime.strptime(date, '%Y-%m-%d')
-        for player, date in data.items()
-    }
+    result: Dict[str, PlayerRecord] = {}
+    for player, raw in data.items():
+        if isinstance(raw, str):
+            # Legacy format that only stored the last date
+            last_date = datetime.strptime(raw, '%Y-%m-%d')
+            result[player] = PlayerRecord(last_date=last_date)
+        elif isinstance(raw, dict):
+            last_raw = raw.get('last_date') or raw.get('last_seen')
+            if not last_raw:
+                continue
+            last_date = datetime.strptime(last_raw, '%Y-%m-%d')
+            total_seconds = int(raw.get('total_seconds', 0))
+            result[player] = PlayerRecord(last_date=last_date, total_seconds=total_seconds)
+        else:
+            continue
+    return result
 
 
-def save_player_data(server: PluginServerInterface, data: Dict[str, datetime]) -> None:
+def save_player_data(server: PluginServerInterface, data: Dict[str, PlayerRecord]) -> None:
     """保存玩家数据"""
     formatted_data = {
-        player: date.strftime('%Y-%m-%d')
-        for player, date in data.items()
+        player: {
+            'last_date': record.last_date.strftime('%Y-%m-%d'),
+            'total_seconds': record.total_seconds
+        }
+        for player, record in data.items()
     }
     server.save_config_simple({'player_list': formatted_data}, 'data.json')
 
 
-def create_player_info(name: str, last_date: datetime, config: Config) -> PlayerInfo:
+def create_player_info(name: str, record: PlayerRecord, config: Config) -> PlayerInfo:
     """创建PlayerInfo实例"""
-    return PlayerInfo(name=name, last_date=last_date, config=config)
+    return PlayerInfo(name=name, record=record, config=config)
 
 
 def sort_players(players: List[PlayerInfo], reverse: bool = True) -> List[PlayerInfo]:
     """按最后游玩时间排序玩家列表"""
-    return sorted(players, key=lambda p: p.last_date.timestamp(), reverse=reverse) 
+    return sorted(players, key=lambda p: p.record.last_date.timestamp(), reverse=reverse)
