@@ -69,7 +69,7 @@ def remove_player(player: str, force_offline: bool = False):
             raise WhitelistException(f"{player} is not exist")
         __psi.execute(f'whitelist remove {player}')
     else:
-        if player not in players:
+        if player.upper() not in [_player.upper() for _player in players]:
             raise WhitelistException(f"{player} is not exist")
         __api.remove_player(player)
         __psi.execute('whitelist reload')
