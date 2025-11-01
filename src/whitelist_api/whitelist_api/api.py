@@ -97,7 +97,7 @@ class WhitelistApi:
 
     def remove_player(self, player: str) -> bool:
         for index, p in enumerate(self.__whitelist):
-            if p.name == player:
+            if p.name.upper() == player.upper():
                 self.__whitelist.remove(p)
                 self.save_whitelist()
                 return True
