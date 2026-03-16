@@ -1,11 +1,13 @@
 import json
 import logging
+import yaml
 from pathlib import Path
 from json import JSONDecodeError
 from typing import List, Optional, Union
 
 watch_enable: False
 _default_server_properties = 'server.properties'
+_default_paper_config = "config/paper-global.yml"
 _default_whitelist_json = 'whitelist.json'
 
 try:
@@ -119,13 +121,25 @@ class WhitelistApi:
         self.__logger.info('whitelist api watchdog stopped')
 
     def refresh_online_mode(self) -> Optional[bool]:
+        found = False
         with open(self.server_directory / _default_server_properties, mode='r', encoding='UTF-8') as props:
             line = props.readline()
             while line:
                 # trim '\n'
                 kv = line[:-1].split('=')
                 if len(kv) == 2 and kv[0] == 'online-mode':
+                    found = True
                     self.__online_mode = True if kv[1] == 'true' else False
-                    return self.__online_mode
+                    break
                 line = props.readline()
-        return None
+        if not found:
+            return None
+        if not self.__online_mode:  # Check if paper-global.yml is present. If yes, check if velocity and velocity's online-mode is enabled.
+            try:
+                with open(self.server_directory / _default_paper_config , mode='r', encoding='UTF-8') as config:
+                    props = yaml.safe_load(config)
+                    velocity = props.get('proxies', {}).get('velocity', {})
+                    self.__online_mode = velocity.get('enabled', False) and velocity.get('online-mode', False)
+            except (FileNotFoundError, yaml.YAMLError):
+                self.__online_mode = False
+        return self.__online_mode
