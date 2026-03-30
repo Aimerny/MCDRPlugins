@@ -57,9 +57,11 @@ def add_online_player(player: str):
 
 def add_floodgate_player(player: str, prefix:str='.'):
     players = get_whitelist_names()
-    if player in players:
+    if player.startswith(prefix):
+        player = player[1:]
+    if prefix + player in players:
         raise WhitelistException(f"{player} is already exist")
-    __psi.execute(f'fwhitelist add {prefix}{player}')
+    __psi.execute(f'fwhitelist add {player}')
 
 
 def remove_player(player: str, force_offline: bool = False):
