@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/Aimerny/MCDRPlugins/compare/whitelist_api-v1.4.0...whitelist_api-v1.4.1) (2026-03-30)
+
+
+### Bug Fixes
+
+* **whitelist_api:** 基岩版玩家白名单添加与查重逻辑 ([#109](https://github.com/Aimerny/MCDRPlugins/issues/109)) ([254d51d](https://github.com/Aimerny/MCDRPlugins/commit/254d51d5bddac09bc629f721f8f75a4a3afb91a0))
+
 ## [1.4.0](https://github.com/Aimerny/MCDRPlugins/compare/whitelist_api-v1.3.4...whitelist_api-v1.4.0) (2025-06-09)
 
 
