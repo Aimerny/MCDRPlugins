@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/Aimerny/MCDRPlugins/compare/whitelist_api-v1.4.1...whitelist_api-v2.0.0) (2026-04-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* **whitelist_api:** PyYAML is now required to parse paper-global.yml
+
+### Features
+
+* **whitelist_api:** detect Velocity online-mode when server.properties has online-mode=false ([#111](https://github.com/Aimerny/MCDRPlugins/issues/111)) ([2f78147](https://github.com/Aimerny/MCDRPlugins/commit/2f7814729bcfb3bd6ff4d5463b22155826958697))
+
 ## [1.4.1](https://github.com/Aimerny/MCDRPlugins/compare/whitelist_api-v1.4.0...whitelist_api-v1.4.1) (2026-03-30)
 
 
