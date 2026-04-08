@@ -61,7 +61,7 @@ def add_floodgate_player(player: str, prefix:str='.'):
         player = player[1:]
     if prefix + player in players:
         raise WhitelistException(f"{player} is already exist")
-    __psi.execute(f'fwhitelist add {player}')
+    __psi.execute(f'fwhitelist add "{player}"')
 
 
 def remove_player(player: str, force_offline: bool = False):
